@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Salil Gokhale — AI Generalist &amp; AI Researcher</title>
+<meta name="description" content="Salil Gokhale — AI Generalist, AI Researcher, AI Practitioner and AI Explorer. AI projects, experimentation, prompt engineering and AI-powered analytics.">
+<meta name="author" content="Salil Gokhale">
+<meta name="theme-color" content="#0a0c10" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f3f5f8" media="(prefers-color-scheme: light)">
+<!-- ============ SITE URL CONFIG (domain not set yet) ============
+     Once the site is deployed, replace SITE_URL with the real address
+     (the full https:// address, no trailing slash) and move these four lines out of this comment:
+<link rel="canonical" href="SITE_URL/">
+<meta property="og:url" content="SITE_URL/">
+<meta property="og:image" content="SITE_URL/assets/og-image.png">
+<meta name="twitter:image" content="SITE_URL/assets/og-image.png">
+     Then change twitter:card below to "summary_large_image".
+     ================================================================ -->
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Salil Gokhale — The AI Desk">
+<meta property="og:title" content="Salil Gokhale — AI Generalist & AI Researcher">
+<meta property="og:description" content="Salil Gokhale — AI Generalist, AI Researcher, AI Practitioner and AI Explorer. AI projects, experimentation, prompt engineering and AI-powered analytics.">
+<meta property="og:locale" content="en_IN">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Salil Gokhale — AI Generalist & AI Researcher">
+<meta name="twitter:description" content="Salil Gokhale — AI Generalist, AI Researcher, AI Practitioner and AI Explorer. AI projects, experimentation, prompt engineering and AI-powered analytics.">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+
+<!-- Apply saved theme before paint to avoid a flash -->
+<script>try{var t=localStorage.getItem("desk-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Salil Gokhale",
+  "jobTitle": "AI Generalist & AI Researcher",
+  "description": "Salil Gokhale — AI Generalist, AI Researcher, AI Practitioner and AI Explorer. AI projects, experimentation, prompt engineering and AI-powered analytics.",
+  "email": "mailto:gokhalesalil28@gmail.com",
+  "address": { "@type": "PostalAddress", "addressRegion": "Maharashtra", "addressCountry": "IN" },
+  "knowsLanguage": ["English", "Hindi", "Marathi", "Gujarati", "Tamil", "Telugu", "Kannada"],
+  "knowsAbout": ["Artificial Intelligence", "Generative AI", "Prompt Engineering", "AI Research", "AI Workflow Automation", "AI-assisted Data Analysis", "Responsible AI"],
+  "hasCredential": [
+    { "@type": "EducationalOccupationalCredential", "name": "Google AI Professional Certificate", "credentialCategory": "Professional Certificate", "recognizedBy": { "@type": "Organization", "name": "Google" }, "dateCreated": "2026-10-02" },
+    { "@type": "EducationalOccupationalCredential", "name": "AI Generalist, AI Career Accelerator Program", "credentialCategory": "Certificate of Mastery", "recognizedBy": { "@type": "Organization", "name": "be10x" }, "dateCreated": "2026-08-05" },
+    { "@type": "EducationalOccupationalCredential", "name": "Vista Equity Partners AI in Action Job Simulation", "credentialCategory": "Job simulation", "recognizedBy": { "@type": "Organization", "name": "Forage" }, "dateCreated": "2026-02-19" }
+  ],
+  "sameAs": ["https://www.linkedin.com/in/salil-gokhale-analytics", "https://github.com/Salil360-cyber"]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="readProgress" aria-hidden="true"></div>
+
+<!-- ============================ NAV ============================ -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="brand" href="#home" aria-label="Salil Gokhale, home">
+      <span class="brand__mark" aria-hidden="true">SG</span>
+      <span class="brand__text"><span class="brand__name">Salil Gokhale</span><span class="brand__desk">The AI Desk</span></span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">AI Work</a>
+      <a href="#research">Research</a>
+      <a href="#topics">Topics</a>
+      <a href="#skills">Toolkit</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#stories" data-needs-articles>Insights</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav__actions">
+      <button class="icon-btn" id="searchOpen" type="button" aria-label="Search the site (Ctrl+K)" title="Search (Ctrl+K)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+      </button>
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to light mode">
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+      </button>
+      <a class="btn btn--small btn--ghost resume-btn" id="resumeBtn" href="#resume">Resume</a>
+      <button class="icon-btn burger" id="menuOpen" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" role="region" aria-label="Site menu" hidden>
+  <nav aria-label="Mobile">
+    <a href="#home">Home</a><a href="#about">About</a><a href="#projects">AI Work</a><a href="#research">Research</a>
+    <a href="#topics">Topics</a><a href="#skills">Toolkit</a><a href="#certifications">Certifications</a><a href="#stories" data-needs-articles>Insights</a><a href="#contact">Contact</a>
+  </nav>
+  <div class="mobile-menu__foot">
+    <a class="btn btn--primary" href="#projects">Explore AI Work</a>
+    <a class="btn btn--ghost" id="resumeBtnMobile" href="#resume">View Resume</a>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ============================ HERO ============================ -->
+<section class="hero" id="home" aria-labelledby="heroTitle">
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <p class="dateline"><span class="pulse" aria-hidden="true"></span><span id="heroDateline">The AI Desk · Independent</span></p>
+      <h1 class="hero__title" id="heroTitle">
+        <span class="line"><span>AI Generalist.</span></span>
+        <span class="line"><span>Researcher.</span></span>
+        <span class="line"><span><em>Explorer.</em></span></span>
+      </h1>
+      <p class="hero__sub" id="heroSub">I research, test and build with AI: applications, workflows and AI-powered analytics.</p>
+      <p class="hero__intro" id="heroIntro"></p>
+      <div class="hero__ctas">
+        <a class="btn btn--primary" href="#projects">Explore AI Work <span aria-hidden="true">→</span></a>
+        <a class="btn btn--ghost" href="#resume">View Resume</a>
+      </div>
+    </div>
+
+    <aside class="monitor glass" aria-label="Desk monitor: topics the desk is tracking">
+      <div class="monitor__bar">
+        <span class="monitor__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="mono">DESK MONITOR</span>
+        <span class="mono monitor__clock" id="deskClock">--:-- IST</span>
+      </div>
+      <div class="monitor__canvas-wrap">
+        <canvas id="signalCanvas" role="img" aria-label="Signal map of the desk's beats: AI, Research, Technology, Ethics, Innovation and Future"></canvas>
+      </div>
+      <div class="monitor__feed" aria-live="off">
+        <p class="mono monitor__label">AI workflow · illustrative loop</p>
+        <ol id="deskFeed" class="mono feed"></ol>
+      </div>
+    </aside>
+  </div>
+  <div class="wrap">
+    <div class="ticker" aria-hidden="true"><div class="ticker__track" id="ticker"></div></div>
+  </div>
+</section>
+
+<!-- ============================ ABOUT ============================ -->
+<section class="section" id="about" aria-labelledby="aboutTitle">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker">About</p>
+      <h2 class="sec-title" id="aboutTitle">About Me</h2>
+    </header>
+    <div class="about">
+      <div class="about__text">
+        <p class="about__positioning mono" id="aboutPositioning"></p>
+        <p class="about__lead" id="aboutLead"></p>
+        <div id="aboutBody" class="prose"></div>
+        <p class="about__approach" id="aboutApproach"></p>
+        <h3 class="mini-head">Areas of interest</h3>
+        <ul class="interests" id="aboutInterests"></ul>
+        <h3 class="mini-head">What I Can Do</h3>
+        <ul class="strengths" id="strengths"></ul>
+      </div>
+      <aside class="profile-card glass" aria-label="AI Generalist profile" id="profileCard"></aside>
+    </div>
+    <div class="diff" id="differentiators" aria-label="What makes this desk different"></div>
+  </div>
+</section>
+
+<!-- ============================ FEATURED ============================ -->
+<section class="section section--tight" id="featured" aria-label="Featured AI work">
+  <div class="wrap" id="featuredStory"></div>
+</section>
+
+<!-- ============================ PROJECTS ============================ -->
+<section class="section section--alt" id="projects" aria-labelledby="projectsTitle">
+  <div class="wrap">
+    <header class="sec-head sec-head--row">
+      <div>
+        <p class="kicker">Lab</p>
+        <h2 class="sec-title" id="projectsTitle">AI Projects &amp; Experiments</h2>
+      </div>
+      <p class="sec-note">Things I've built or am building with AI. AI tools assist the work; direction, testing and final decisions are mine.</p>
+    </header>
+    <div class="chips" id="projectFilters" role="toolbar" aria-label="Filter projects by status"></div>
+    <div class="project-grid" id="projectGrid"></div>
+    <p class="empty" id="projectEmpty" hidden>No projects match this filter yet.</p>
+
+    <h3 class="mini-head mini-head--spaced" id="caseTitle">Featured Work &amp; Case Studies</h3>
+    <div class="case-grid" id="caseGrid"></div>
+  </div>
+</section>
+
+<!-- ============================ RESEARCH ============================ -->
+<section class="section" id="research" aria-labelledby="researchTitle">
+  <div class="wrap">
+    <header class="sec-head sec-head--row">
+      <div>
+        <p class="kicker">Investigations</p>
+        <h2 class="sec-title" id="researchTitle">Research &amp; Investigations</h2>
+      </div>
+      <p class="sec-note">Longer studies with a stated question and method. Findings appear only when the work is done.</p>
+    </header>
+    <div class="research-list" id="researchList"></div>
+    <p class="empty" id="researchEmpty" hidden>No research under this topic yet.</p>
+  </div>
+</section>
+
+<!-- ============================ WORKFLOW ============================ -->
+<section class="section section--alt" id="workflow" aria-labelledby="workflowTitle">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker">Method</p>
+      <h2 class="sec-title" id="workflowTitle">How I Explore &amp; Build With AI</h2>
+      <p class="sec-lede">Every AI project moves through the same seven stages. AI tools help along the way; the judgment at each step is mine.</p>
+    </header>
+    <div class="pipeline" id="pipeline"></div>
+    <div class="pipeline__detail glass" id="pipelineDetail" aria-live="polite"></div>
+    <div class="prompt-loop" id="promptLoop"></div>
+  </div>
+</section>
+
+<!-- ============================ TOPICS ============================ -->
+<section class="section" id="topics" aria-labelledby="topicsTitle">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker">Focus areas</p>
+      <h2 class="sec-title" id="topicsTitle">What I Explore</h2>
+      <p class="sec-lede">Choose a topic to filter projects, research and writing across the site.</p>
+    </header>
+    <div class="topic-grid" id="topicGrid"></div>
+  </div>
+</section>
+
+<!-- ============================ PRINCIPLES ============================ -->
+<section class="section section--principles" id="principles" aria-labelledby="principlesTitle">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker">Standards</p>
+      <h2 class="sec-title" id="principlesTitle">My Approach to AI Research &amp; Exploration</h2>
+    </header>
+    <div class="principles" id="principleList"></div>
+  </div>
+</section>
+
+<!-- ============================ SKILLS ============================ -->
+<section class="section section--alt" id="skills" aria-labelledby="skillsTitle">
+  <div class="wrap">
+    <header class="sec-head sec-head--row">
+      <div>
+        <p class="kicker">Toolkit</p>
+        <h2 class="sec-title" id="skillsTitle">My AI Toolkit</h2>
+      </div>
+      <ul class="legend mono" aria-label="Skill level key">
+        <li><span class="lvl lvl--core"></span>Core</li>
+        <li><span class="lvl lvl--working"></span>Working</li>
+        <li><span class="lvl lvl--learning"></span>Learning</li>
+      </ul>
+    </header>
+    <div class="skill-grid" id="skillGrid"></div>
+  </div>
+</section>
+
+<!-- ============================ CERTIFICATIONS ============================ -->
+<section class="section" id="certifications" aria-labelledby="certTitle">
+  <div class="wrap">
+    <header class="sec-head sec-head--row">
+      <div>
+        <p class="kicker">AI Knowledge &amp; Applied Learning</p>
+        <h2 class="sec-title" id="certTitle">AI Certifications</h2>
+      </div>
+      <p class="sec-note">Structured AI learning and applied simulations behind the work.</p>
+    </header>
+    <div class="cert-list" id="certList"></div>
+  </div>
+</section>
+
+<!-- ============================ TIMELINE + STATS ============================ -->
+<section class="section" id="journey" aria-labelledby="journeyTitle">
+  <div class="wrap journey">
+    <div>
+      <header class="sec-head">
+        <p class="kicker">Journey</p>
+        <h2 class="sec-title" id="journeyTitle">My AI Journey</h2>
+      </header>
+      <ol class="timeline" id="timeline"></ol>
+    </div>
+    <aside class="stats" aria-labelledby="statsTitle">
+      <h3 class="mini-head" id="statsTitle">On the desk</h3>
+      <dl class="stats__list" id="stats"></dl>
+      <p class="stats__note mono" id="statsNote"></p>
+    </aside>
+  </div>
+</section>
+
+<!-- ============================ AI WRITING & INSIGHTS ============================ -->
+<section class="section" id="stories" aria-labelledby="storiesTitle">
+  <div class="wrap">
+    <header class="sec-head sec-head--row">
+      <div>
+        <p class="kicker">Writing</p>
+        <h2 class="sec-title" id="storiesTitle">AI Writing &amp; Insights</h2>
+      </div>
+      <p class="sec-note">Write-ups on AI tools, experiments, research and applications.</p>
+    </header>
+    <div class="topic-filter-bar" id="activeTopicBar" hidden></div>
+    <div class="chips" id="storyFilters" role="toolbar" aria-label="Filter articles by category"></div>
+    <div class="story-grid" id="storyGrid" aria-live="polite"></div>
+    <p class="empty" id="storyEmpty" hidden>No articles in this category yet.</p>
+  </div>
+</section>
+
+<!-- ============================ CONTACT ============================ -->
+<section class="section contact" id="contact" aria-labelledby="contactTitle">
+  <div class="wrap contact__inner">
+    <p class="kicker">Contact</p>
+    <h2 class="contact__title" id="contactTitle">Have an AI project, research idea, or collaboration in mind?</h2>
+    <p class="contact__sub" id="contactSub"></p>
+    <div class="contact__ctas">
+      <a class="btn btn--primary" id="startConvo" href="#contact">Email Salil <span aria-hidden="true">→</span></a>
+      <a class="btn btn--ghost" id="linkedinBtn" href="#contact">LinkedIn <span aria-hidden="true">↗</span></a>
+      <a class="btn btn--ghost" id="githubBtn" href="#contact">GitHub <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="contact__resume">
+      <span class="mono contact__resume-label">Resume</span>
+      <a class="btn btn--small btn--ghost" id="viewResume" href="#resume">View Resume <span aria-hidden="true">→</span></a>
+      <a class="btn btn--small btn--ghost" id="downloadResume" href="assets/Salil_Gokhale_AI_Generalist_Resume.pdf" download>Download Resume <span aria-hidden="true">↓</span></a>
+    </div>
+    <div class="contact__email">
+      <span class="mono" id="emailText"></span>
+      <button class="btn btn--small btn--ghost" id="copyEmail" type="button">Copy email</button>
+    </div>
+    <ul class="socials" id="socials"></ul>
+  </div>
+</section>
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <div>
+      <p class="footer__name">Salil Gokhale</p>
+      <p class="footer__roles mono">AI Generalist • AI Researcher • AI Practitioner • AI Explorer</p>
+      <p class="footer__tag" id="footerTag">Understanding AI. Questioning AI. Applying it well.</p>
+    </div>
+    <nav aria-label="Footer">
+      <p class="footer__label mono">Sections</p>
+      <ul class="footer__links">
+        <li><a href="#about">About</a></li><li><a href="#projects">AI Work</a></li><li><a href="#research">Research</a></li>
+        <li><a href="#certifications">Certifications</a></li><li><a href="#stories" data-needs-articles>Insights</a></li><li><a href="#resume">Resume</a></li><li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div>
+      <p class="footer__label mono">Elsewhere</p>
+      <ul class="footer__links" id="footerSocials"></ul>
+    </div>
+  </div>
+  <div class="wrap footer__base mono">
+    <span>© <span id="year">2026</span> Salil Gokhale. All rights reserved.</span>
+  </div>
+</footer>
+
+<!-- ============================ READER (article / case study) ============================ -->
+<div class="reader" id="reader" role="dialog" aria-modal="true" aria-labelledby="readerTitle" hidden>
+  <div class="reader__progress" id="readerProgress" aria-hidden="true"></div>
+  <div class="reader__bar">
+    <button class="btn btn--small btn--ghost" id="readerClose" type="button"><span aria-hidden="true">←</span> Back to the desk</button>
+    <span class="mono reader__crumb" id="readerCrumb"></span>
+  </div>
+  <div class="reader__scroll" id="readerScroll">
+    <article class="reader__article" id="readerArticle"></article>
+  </div>
+</div>
+
+<!-- ============================ SEARCH ============================ -->
+<div class="search" id="search" role="dialog" aria-modal="true" aria-label="Search the site" hidden>
+  <div class="search__panel glass">
+    <div class="search__field">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+      <label class="sr-only" for="searchInput">Search projects, research, certifications and topics</label>
+      <input id="searchInput" type="search" placeholder="Search projects, research, certifications, topics…" autocomplete="off">
+      <button class="mono search__esc" id="searchClose" type="button" aria-label="Close search">Esc</button>
+    </div>
+    <div class="search__results" id="searchResults" aria-live="polite"></div>
+  </div>
+</div>
+
+<!-- ============================ AI DESK ============================ -->
+<button class="desk-launch" id="deskLaunch" type="button" aria-controls="desk" aria-expanded="false" aria-label="Ask Salil's AI Desk (scripted demo)">
+  <span class="pulse" aria-hidden="true"></span> <span class="desk-launch__long">Ask Salil's </span>AI Desk
+</button>
+<section class="desk glass" id="desk" aria-label="Ask Salil's AI Desk" hidden>
+  <header class="desk__head">
+    <div>
+      <p class="mono desk__title">ASK SALIL'S AI DESK</p>
+      <p class="mono desk__mode">Scripted demo · answers come from this site, not a live AI model</p>
+    </div>
+    <button class="icon-btn" id="deskClose" type="button" aria-label="Close AI Desk">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+  </header>
+  <div class="desk__log mono" id="deskLog" aria-live="polite" tabindex="0" role="log" aria-label="AI Desk conversation"></div>
+  <div class="desk__chips" id="deskChips"></div>
+  <form class="desk__form" id="deskForm">
+    <label class="sr-only" for="deskInput">Ask a question</label>
+    <span class="mono desk__prompt" aria-hidden="true">&gt;</span>
+    <input id="deskInput" type="text" placeholder="Ask about topics, projects, collaboration…" autocomplete="off">
+    <button class="btn btn--small btn--primary" type="submit">Ask</button>
+  </form>
+</section>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<noscript><p class="noscript">This site needs JavaScript to load projects, research and certifications. You can reach Salil at gokhalesalil28@gmail.com.</p></noscript>
+
+<!-- Content (edit these) -->
+<script src="data/profile.js"></script>
+<script src="data/topics.js"></script>
+<script src="data/articles.js"></script>
+<script src="data/research.js"></script>
+<script src="data/projects.js"></script>
+<script src="data/desk.js"></script>
+<script src="data/certifications.js"></script>
+<script src="data/resume.js"></script>
+<!-- App -->
+<script src="js/covers.js"></script>
+<script src="js/ai-desk.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
