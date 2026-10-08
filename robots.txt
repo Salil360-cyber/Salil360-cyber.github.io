@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Once the site has a domain, add a sitemap and point to it here, e.g.
-# Sitemap: SITE_URL/sitemap.xml
+Sitemap: https://salil360-cyber.github.io/sitemap.xml

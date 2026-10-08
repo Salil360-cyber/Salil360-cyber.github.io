@@ -152,9 +152,7 @@ After deploying, finish the SEO setup in section 8 (it takes two minutes).
 
 - **Already set:** title, meta description, Open Graph and Twitter/X title + description, favicon, apple-touch icon, `robots.txt`. Fonts load only the weights the CSS uses.
 - **Structured data:** `Person` JSON-LD (with the three credentials as `hasCredential`) in the head; `Article` JSON-LD is injected when an article opens.
-- **Waiting for the real domain** (no domain has been guessed). In `index.html`, the block marked `SITE URL CONFIG` holds the canonical, `og:url`, `og:image` and `twitter:image` tags with a `SITE_URL` placeholder inside an HTML comment. After deploying:
-  1. Replace `SITE_URL` with your address (e.g. `https://salil.example`), move the four lines out of the comment, and set `twitter:card` to `summary_large_image`.
-  2. Create `sitemap.xml` with one entry: `<url><loc>SITE_URL/</loc></url>` (inside the standard `<urlset>` wrapper), and uncomment the `Sitemap:` line in `robots.txt`.
+- **Live address:** https://salil360-cyber.github.io (GitHub Pages). The canonical, `og:url`, `og:image` and `twitter:image` tags in `index.html`, the `url` in the JSON-LD, `sitemap.xml` and the `Sitemap:` line in `robots.txt` all use it. If you move to a custom domain, change it in those places.
 - **Social preview image:** `assets/og-image.png` (1200×630) is ready, built from your name, photo and the site colours.
 - One `h1`, semantic `section`/`article`/`nav`/`footer`, labelled landmarks
 - Content is rendered by JavaScript. Google indexes it, but for the strongest SEO on individual articles, a later step could be generating one static HTML page per article.

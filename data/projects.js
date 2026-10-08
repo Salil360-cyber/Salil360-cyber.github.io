@@ -227,7 +227,7 @@ SITE.caseStudies = [
       testing: "Tested at phone, tablet and desktop widths, with keyboard navigation, reduced motion and an automated accessibility check, after each build phase.",
       outcome: "A data-driven site where every project, study and certification is a plain JavaScript object, and unfinished work stays hidden until it's real.",
       lessons: "The strongest early signal of credibility is method: visible verification steps, labelled uncertainty and honest status labels.",
-      remaining: "The site isn't on a public domain yet, and no articles have been published.",
+      remaining: "No articles have been published yet.",
       next: null
     }
   }
