@@ -33,6 +33,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/robot.css">
 
 <!-- Apply saved theme before paint to avoid a flash -->
 <script>try{var t=localStorage.getItem("desk-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
@@ -127,6 +128,16 @@
       </div>
     </div>
 
+    <div class="robot">
+    <div class="robot__stage" aria-hidden="true">
+      <div class="robot__halo"></div>
+      <canvas class="robot__canvas"></canvas>
+      <div class="robot__bubble"><span class="robot__who mono">AI guide</span><p class="robot__say"></p></div>
+    </div>
+    <button class="robot__voice btn btn--small btn--ghost" type="button" aria-pressed="false" hidden>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path class="robot__wave" d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/><path class="robot__mute" d="m22 9-6 6M16 9l6 6"/></svg>
+      <span class="robot__voice-label">Turn on voice</span>
+    </button>
     <aside class="monitor glass" aria-label="Desk monitor: topics the desk is tracking">
       <div class="monitor__bar">
         <span class="monitor__dots" aria-hidden="true"><i></i><i></i><i></i></span>
@@ -141,6 +152,7 @@
         <ol id="deskFeed" class="mono feed"></ol>
       </div>
     </aside>
+    </div>
   </div>
   <div class="wrap">
     <div class="ticker" aria-hidden="true"><div class="ticker__track" id="ticker"></div></div>
@@ -430,5 +442,7 @@
 <script src="js/covers.js"></script>
 <script src="js/ai-desk.js"></script>
 <script src="js/app.js"></script>
+<!-- Hero 3D robot guide (Spline robot that follows the cursor; talks on click). Remove this line and css/robot.css to go back to the Desk Monitor. -->
+<script src="js/robot-spline.js"></script>
 </body>
 </html>

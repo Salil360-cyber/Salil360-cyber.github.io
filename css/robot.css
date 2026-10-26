@@ -1,0 +1,86 @@
+/* robot.css — free-standing talking 3D robot guide (js/robot-spline.js) in the hero's
+   right column, with a speech bubble and an optional voice. The Desk Monitor stays in the page as the
+   fallback when JavaScript or WebGL is unavailable. */
+:root {
+  --robot-halo-a: rgba(92, 207, 244, 0.16);
+  --robot-halo-b: rgba(160, 147, 255, 0.12);
+  --robot-spot: rgba(255, 255, 255, 0.34);
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) { --robot-halo-a: rgba(8, 103, 148, 0.12); --robot-halo-b: rgba(88, 69, 207, 0.1); --robot-spot: rgba(70, 90, 140, 0.22); }
+}
+:root[data-theme="light"] { --robot-halo-a: rgba(8, 103, 148, 0.12); --robot-halo-b: rgba(88, 69, 207, 0.1); --robot-spot: rgba(70, 90, 140, 0.22); }
+
+.robot { position: relative; min-width: 0; }
+.robot__stage { display: none; }
+.robot--ready .monitor { display: none; }
+
+/* No box: the robot stands straight on the hero background */
+.robot--loading .robot__stage { display: block; position: absolute; inset: 0; visibility: hidden; }
+.robot--ready .robot__stage {
+  display: block; position: relative;
+  height: clamp(540px, 84vh, 820px);
+  margin-block: calc(-1 * clamp(20px, 4vw, 48px));
+}
+/* Soft spotlight that follows the cursor behind the robot (as in the Spline demo).
+   Drawn as a gradient on the stage, so it always fades out softly, never with a hard edge. */
+.robot__stage::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(260px circle at var(--sx, 50%) var(--sy, 28%), var(--robot-spot), transparent 72%);
+  opacity: 0.6; transition: opacity 0.6s var(--ease);
+  -webkit-mask-image: radial-gradient(closest-side ellipse at 50% 42%, #000 60%, transparent 100%);
+  mask-image: radial-gradient(closest-side ellipse at 50% 42%, #000 60%, transparent 100%);
+}
+.robot--lit .robot__stage::before { opacity: 1; }
+.robot__halo {
+  position: absolute; inset: 8% 6% 18% 6%; pointer-events: none;
+  background:
+    radial-gradient(45% 40% at 50% 34%, var(--robot-halo-a), transparent 70%),
+    radial-gradient(40% 45% at 64% 52%, var(--robot-halo-b), transparent 70%);
+  filter: blur(10px);
+}
+/* The 3D robot canvas: transparent, fades out at the bottom into the page */
+.robot__canvas {
+  position: absolute; inset: 0; z-index: 1; width: 100% !important; height: 100% !important; display: block; cursor: pointer;
+  opacity: 0; transition: opacity 1.2s var(--ease);
+  -webkit-mask-image: linear-gradient(180deg, #000 76%, transparent 99%), linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(180deg, #000 76%, transparent 99%), linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+  mask-composite: intersect;
+}
+.robot--ready .robot__canvas { opacity: 1; }
+
+/* Voice toggle under the robot */
+.robot__voice { position: absolute; right: 0; bottom: 4px; z-index: 3; gap: 8px; }
+.robot__voice .robot__wave { display: none; }
+.robot__voice[aria-pressed="true"] .robot__wave { display: inline; }
+.robot__voice[aria-pressed="true"] .robot__mute { display: none; }
+
+/* Speech bubble, beside the robot's head */
+.robot__bubble {
+  position: absolute; left: -26%; top: 10%; z-index: 2; max-width: min(230px, 44%);
+  padding: 12px 14px 13px; border-radius: 14px 14px 4px 14px;
+  background: var(--glass); border: 1px solid var(--glass-line);
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  box-shadow: 0 18px 50px -24px rgba(0, 0, 0, 0.55);
+  opacity: 0; translate: 0 8px; scale: 0.96; transform-origin: 100% 100%;
+  transition: opacity 0.35s var(--ease), translate 0.35s var(--ease), scale 0.35s var(--ease);
+  pointer-events: none;
+}
+.robot__bubble.is-on { opacity: 1; translate: 0 0; scale: 1; }
+.robot__who { display: flex; align-items: center; gap: 8px; font-size: 0.64rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+.robot__who::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent); }
+.robot__say { margin: 0; font-size: 0.94rem; line-height: 1.45; color: var(--fg); min-height: 1.45em; }
+.robot__say::after { content: ""; display: inline-block; width: 2px; height: 1em; margin-left: 2px; vertical-align: -2px; background: var(--accent); animation: robot-caret 0.9s steps(1) infinite; }
+.robot__bubble.is-done .robot__say::after { display: none; }
+@keyframes robot-caret { 50% { opacity: 0; } }
+
+@media (max-width: 960px) {
+  .robot--ready .robot__stage { height: clamp(420px, 112vw, 600px); max-width: 600px; margin: 8px auto 0; }
+  .robot__bubble { left: 0; top: auto; bottom: 64px; max-width: 64%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .robot__stage::before { display: none; }
+  .robot__say::after { animation: none; }
+  .robot__bubble { transition: none; }
+}
