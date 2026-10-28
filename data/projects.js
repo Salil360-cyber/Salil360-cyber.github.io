@@ -108,6 +108,37 @@ SITE.projects = [
     topics: ["creativity", "genai", "tools"]
   },
   {
+    slug: "recondesk",
+    name: "ReconDesk — AI-Assisted Daily Reconciliation Check",
+    status: "Completed",
+    date: "2026",
+    tagline: "244 records checked · 35/35 breaks found · 0 false alerts",
+    featuredSummary: "A daily reconciliation check that finds every mismatch between a bank's records and the custodian's records, and tells the team what to fix first.",
+    problem: "Banks compare their internal records with the custodian's every day. Any mismatch (a \"break\") can mean missing money or a wrong client report, and checking thousands of lines by hand is slow and error-prone.",
+    solution: "A daily reconciliation check that finds every mismatch between a bank's records and the custodian's records, and tells the team what to fix first.",
+    ai: ["Gemini, then Claude (code and review)", "AI explains breaks in clearer words; matching uses fixed rules"],
+    role: "Decided what the tool had to check, directed the AI and tested every result before accepting it",
+    outcome: "Checks 199 cash movements and 45 share positions, sorts 35 breaks by age and priority, and produces an Excel report with a daily sign-off checklist. Synthetic data.",
+    evidence: [
+      "An AI review flagged a 3% tolerance in the first version; checked on test data with known answers, 10 of 20 test breaks were being marked as matched (83.3% reported vs 66.7% real)",
+      "Rebuilt with a near-zero tolerance (0.01, rounding only) and automated tests so the problem can't come back",
+      "Test data contains 35 breaks added on purpose: automated tests confirm all 35 are found with the right type and cause, and 0 false alerts",
+      "AI is used only to explain breaks; the matching uses fixed rules, so results are repeatable and easy to audit"
+    ],
+    tools: ["Python", "Excel", "Claude", "Gemini", "GitHub"],
+    links: { github: "https://github.com/Salil360-cyber/ReconDesk-Custody-Cash-Stock-Break-Reconciliation", demo: null, caseStudy: "case-recondesk" },
+    thumb: { src: "assets/recondesk/1-cover.jpg" },
+    screenshots: [
+      {
+        src: "assets/recondesk/3-ai-catch.jpg",
+        width: 1600, height: 900,
+        alt: "Before and after: version 1 with a 3% tolerance missed 10 of 20 test breaks; version 2 with near-zero tolerance finds 35 of 35 breaks with 0 false alerts.",
+        caption: "The key moment · an AI review found a flaw, verified and rebuilt"
+      }
+    ],
+    topics: ["business", "tools", "genai"]
+  },
+  {
     slug: "ai-desk-portfolio",
     name: "The AI Desk — AI Generalist Portfolio",
     status: "Live",
@@ -220,6 +251,26 @@ SITE.caseStudies = [
     }
   },
 
+  {
+    slug: "case-recondesk",
+    project: "recondesk",
+    page: "projects/recondesk.html",   // full case study lives on its own page
+    title: "ReconDesk: An AI Review Found a Flaw. I Verified It and Rebuilt.",
+    summary: "An AI-assisted daily reconciliation check on synthetic banking data: 244 records checked, 35 of 35 breaks found, 0 false alerts.",
+    topics: ["business", "tools", "genai"],
+    sections: {
+      challenge: "Every mismatch between a bank's and the custodian's records can mean missing money.",
+      role: "Decided what to check; tested every result",
+      approach: "Fixed-rule matching, AI only for explanations",
+      implementation: "Python matching engine with an Excel sign-off report",
+      stack: ["Claude", "Gemini", "Python", "Excel"],
+      testing: "35 injected breaks, all found, 0 false alerts",
+      outcome: "244 records checked, 35/35 breaks found",
+      lessons: "Testing against known answers is what caught the hidden problem.",
+      remaining: null,
+      next: null
+    }
+  },
   {
     slug: "case-portfolio",
     project: "ai-desk-portfolio",

@@ -145,3 +145,28 @@
   .cp-arrow--fail::after { border-top-color: var(--violet); border-left-color: transparent; }
   .cp-arrow b { left: 14px; top: 50%; transform: translateY(-50%); }
 }
+
+/* ---------- Additions for ReconDesk (headline stats, before/after, wide figures) ---------- */
+.cp-stats { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: clamp(32px, 5vw, 56px) 0 0; }
+.cp-stats div { padding: 20px 24px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.cp-stats dt { font: 400 clamp(2.2rem, 4.5vw, 3.4rem)/1 var(--f-display); color: var(--accent); }
+.cp-stats dd { margin: 8px 0 0; color: var(--fg-2); font-size: 0.95rem; }
+.cp-wide { margin: clamp(28px, 4vw, 44px) 0 0; }
+.cp-split--catch, .cp-split--results { margin-top: clamp(8px, 2vw, 16px); align-items: center; }
+.cp-compare { display: grid; gap: 14px; }
+.cp-compare__card { padding: 22px 24px; border-radius: var(--radius); border: 1px solid var(--line-strong); background: var(--bg); display: grid; gap: 6px; }
+.cp-compare__card .mono { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.68rem; }
+.cp-compare__card--bad { border-color: color-mix(in srgb, var(--violet) 45%, transparent); }
+.cp-compare__card--bad .mono, .cp-compare__card--bad .cp-compare__big { color: var(--violet); }
+.cp-compare__card--good { border-color: color-mix(in srgb, var(--accent) 50%, transparent); box-shadow: 0 0 0 4px var(--accent-soft); }
+.cp-compare__card--good .mono, .cp-compare__card--good .cp-compare__big { color: var(--accent); }
+.cp-compare__big { font: 400 clamp(2rem, 4vw, 2.8rem)/1 var(--f-display); }
+.cp-compare__card p:last-child { color: var(--fg-2); }
+.cp-compare__card strong { color: var(--fg); }
+.cp-excel { margin: 0; display: grid; gap: 10px; max-width: 460px; justify-self: center; width: 100%; }
+.cp-excel figcaption { color: var(--muted); }
+@media (max-width: 760px) {
+  .cp-stats { grid-template-columns: 1fr; gap: 10px; }
+  .cp-stats div { display: flex; align-items: baseline; gap: 14px; padding: 16px 18px; }
+  .cp-stats dd { margin: 0; }
+}

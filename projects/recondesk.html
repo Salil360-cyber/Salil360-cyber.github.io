@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ReconDesk — Case Study · Salil Gokhale</title>
+<meta name="description" content="ReconDesk: an AI-assisted daily reconciliation check that finds every mismatch between a bank's records and the custodian's records. Built with Claude and Gemini on synthetic data. Case study by Salil Gokhale, AI Generalist.">
+<meta name="author" content="Salil Gokhale">
+<meta name="theme-color" content="#0a0c10" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f3f5f8" media="(prefers-color-scheme: light)">
+<link rel="canonical" href="https://salil360-cyber.github.io/projects/recondesk.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Salil Gokhale — The AI Desk">
+<meta property="og:url" content="https://salil360-cyber.github.io/projects/recondesk.html">
+<meta property="og:title" content="ReconDesk — Case Study">
+<meta property="og:description" content="A daily reconciliation check that finds every mismatch between a bank's records and the custodian's records, and tells the team what to fix first.">
+<meta property="og:image" content="https://salil360-cyber.github.io/assets/recondesk/1-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ReconDesk — Case Study">
+<meta name="twitter:description" content="A daily reconciliation check that finds every mismatch between a bank's records and the custodian's records, and tells the team what to fix first.">
+<meta name="twitter:image" content="https://salil360-cyber.github.io/assets/recondesk/1-cover.jpg">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="../css/case-page.css">
+<script>try{var t=localStorage.getItem("desk-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+</head>
+<body class="cp">
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="readProgress" aria-hidden="true"></div>
+
+<!-- ============================ NAV (same as the home page) ============================ -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="brand" href="../index.html#home" aria-label="Salil Gokhale, home">
+      <span class="brand__mark" aria-hidden="true">SG</span>
+      <span class="brand__text"><span class="brand__name">Salil Gokhale</span><span class="brand__desk">The AI Desk</span></span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="../index.html#home">Home</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#projects" class="is-active">AI Work</a>
+      <a href="../index.html#research">Research</a>
+      <a href="../index.html#topics">Topics</a>
+      <a href="../index.html#skills">Toolkit</a>
+      <a href="../index.html#certifications">Certifications</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <div class="nav__actions">
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to light mode">
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+      </button>
+      <a class="btn btn--small btn--ghost resume-btn" href="../index.html#resume">Resume</a>
+      <button class="icon-btn burger" id="menuOpen" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" role="region" aria-label="Site menu" hidden>
+  <nav aria-label="Mobile">
+    <a href="../index.html#home">Home</a><a href="../index.html#about">About</a><a href="../index.html#projects">AI Work</a><a href="../index.html#research">Research</a>
+    <a href="../index.html#topics">Topics</a><a href="../index.html#skills">Toolkit</a><a href="../index.html#certifications">Certifications</a><a href="../index.html#contact">Contact</a>
+  </nav>
+  <div class="mobile-menu__foot">
+    <a class="btn btn--primary" href="../index.html#projects">Explore AI Work</a>
+    <a class="btn btn--ghost" href="../index.html#resume">View Resume</a>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ============================ HERO ============================ -->
+<section class="cp-hero" aria-labelledby="cpTitle">
+  <div class="wrap">
+    <a class="cp-back mono" href="../index.html#projects"><span aria-hidden="true">←</span> AI Work</a>
+    <div class="cp-hero__grid">
+      <div class="cp-hero__copy">
+        <p class="kicker">AI-Assisted Project · Banking Operations</p>
+        <h1 class="cp-title" id="cpTitle">ReconDesk</h1>
+        <p class="cp-sub">A daily reconciliation check that finds every mismatch between a bank's records and the custodian's records, and tells the team what to fix first.</p>
+        <dl class="cp-facts">
+          <div><dt>Built with</dt><dd>Claude, Gemini</dd></div>
+          <div><dt>Stack</dt><dd>Python, Excel</dd></div>
+          <div><dt>Data</dt><dd>Synthetic</dd></div>
+          <div><dt>Started for</dt><dd>Razorpay AI Buildathon 2026</dd></div>
+        </dl>
+        <div class="cp-actions">
+          <a class="btn btn--primary" href="https://github.com/Salil360-cyber/ReconDesk-Custody-Cash-Stock-Break-Reconciliation" target="_blank" rel="noopener">View on GitHub <span aria-hidden="true">↗</span></a>
+          <a class="btn btn--ghost" href="#catch">The key moment <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+      <figure class="cp-hero__media">
+        <div class="cp-shot"><img src="../assets/recondesk/1-cover.jpg" width="1600" height="900" alt="ReconDesk cover: a daily reconciliation check that finds every mismatch between a bank's records and the custodian's records. 244 records checked, 35 of 35 breaks found, 0 false alerts. Built with Python, Excel, Claude, Gemini and GitHub on synthetic data." fetchpriority="high"></div>
+      </figure>
+    </div>
+    <dl class="cp-stats" aria-label="Headline results">
+      <div><dt>244</dt><dd>records checked</dd></div>
+      <div><dt>35/35</dt><dd>breaks found</dd></div>
+      <div><dt>0</dt><dd>false alerts</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============================ PROBLEM ============================ -->
+<section class="section section--alt cp-sec" id="problem" aria-labelledby="problemTitle">
+  <div class="wrap cp-split">
+    <header class="sec-head">
+      <p class="kicker">The problem</p>
+      <h2 class="sec-title" id="problemTitle">Every mismatch can mean missing money</h2>
+    </header>
+    <div class="cp-prose">
+      <p>Banks compare their internal records with the custodian's records every day. Any mismatch, called a <strong>"break"</strong>, can mean missing money or a wrong client report.</p>
+      <p>Checking thousands of lines by hand is slow and easy to get wrong.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ ROLES ============================ -->
+<section class="section cp-sec" id="roles" aria-labelledby="rolesTitle">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker">My role and the AI's role</p>
+      <h2 class="sec-title" id="rolesTitle">AI wrote the code. I decided what it had to get right.</h2>
+    </header>
+    <div class="cp-kits">
+      <article class="cp-kit">
+        <p class="kicker">Me</p>
+        <h3>Direction and testing</h3>
+        <p>I started this project for the Razorpay AI Buildathon 2026 and decided what the tool had to check. I tested every result before accepting it.</p>
+      </article>
+      <article class="cp-kit">
+        <p class="kicker">AI (Gemini, then Claude)</p>
+        <h3>Code and review</h3>
+        <p>Wrote and extended the code, and reviewed it against how custody operations teams actually work.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ HOW IT WORKS ============================ -->
+<section class="section section--alt cp-sec" id="how" aria-labelledby="howTitle">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker">How it works</p>
+      <h2 class="sec-title" id="howTitle">From two sets of records to a signed-off report</h2>
+      <p class="sec-lede">AI is used only to explain breaks. The matching uses fixed rules, so the results are repeatable and easy to audit.</p>
+    </header>
+    <figure class="cp-wide">
+      <div class="cp-shot"><img src="../assets/recondesk/2-how-it-works.jpg" width="1600" height="900" alt="Flow diagram: internal books and custodian records go into rule-based matching by reference, amount, date and share quantity; that produces breaks with type, age, priority, likely cause and next action, plus an optional AI explanation for clearer wording; everything ends in an Excel sign-off with a break list, aging and a daily checklist for the team lead." loading="lazy" decoding="async"></div>
+    </figure>
+  </div>
+</section>
+
+<!-- ============================ KEY MOMENT ============================ -->
+<section class="section cp-sec" id="catch" aria-labelledby="catchTitle">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker">The key moment</p>
+      <h2 class="sec-title" id="catchTitle">An AI review found a flaw. I verified it and rebuilt.</h2>
+    </header>
+    <div class="cp-split cp-split--catch">
+      <div class="cp-prose">
+        <p>An AI review of my first version flagged that it allowed a <strong>3% difference</strong> before calling something a break. That sounded small.</p>
+        <p>I checked it on my test data, where I knew the right answers: <strong>10 of the 20 test breaks were being marked as "matched"</strong>. Fees, tax deductions and short delays were hidden.</p>
+        <p>I rebuilt it with a near-zero tolerance (0.01, only for rounding) and added automated tests so the problem can't come back.</p>
+      </div>
+      <div class="cp-compare">
+        <div class="cp-compare__card cp-compare__card--bad">
+          <p class="mono">Version 1 · 3% tolerance</p>
+          <p class="cp-compare__big">83.3%</p>
+          <p>reported match rate, while the real clean rate was <strong>66.7%</strong></p>
+        </div>
+        <div class="cp-compare__card cp-compare__card--good">
+          <p class="mono">Version 2 · near-zero tolerance</p>
+          <p class="cp-compare__big">35 of 35</p>
+          <p>breaks found, with 0 false alerts</p>
+        </div>
+      </div>
+    </div>
+    <figure class="cp-wide">
+      <div class="cp-shot"><img src="../assets/recondesk/3-ai-catch.jpg" width="1600" height="900" alt="Before and after. Version 1 with a 3% tolerance: 10 of 20 test breaks missed, fees, tax and small delays treated as matched, reported 83.3% matched against a real clean rate of 66.7%. Version 2 with near-zero tolerance: 35 of 35 breaks found with 0 false alerts, checked by automated tests on every run. Steps: the AI review flagged the 3% rule, I checked it on test data with known answers, and rebuilt with 0.01 tolerance and added tests." loading="lazy" decoding="async"></div>
+    </figure>
+  </div>
+</section>
+
+<!-- ============================ VERIFICATION ============================ -->
+<section class="section section--alt cp-sec" id="verify" aria-labelledby="verifyTitle">
+  <div class="wrap cp-split">
+    <header class="sec-head">
+      <p class="kicker">How I made sure it works</p>
+      <h2 class="sec-title" id="verifyTitle">Tested against known answers</h2>
+    </header>
+    <div class="cp-prose">
+      <p>The test data contains <strong>35 breaks that were added on purpose</strong>, with a list of each one.</p>
+      <p>Automated tests confirm that all 35 are found, with the right type and cause, and <strong>0 false alerts</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ RESULTS ============================ -->
+<section class="section cp-sec" id="results" aria-labelledby="resultsTitle">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker">Result</p>
+      <h2 class="sec-title" id="resultsTitle">What the finished tool does</h2>
+    </header>
+    <figure class="cp-wide">
+      <div class="cp-shot"><img src="../assets/recondesk/4-results.jpg" width="1600" height="900" alt="Results: 199 cash movements checked (trades, dividends, fees, FX); 45 share positions checked by account and security; 35 breaks sorted by age and priority, each with a likely cause; 7 break types (timing, amount, missing, duplicate, share quantity); 1 Excel report with a daily sign-off checklist; 8 automated tests that check every result." loading="lazy" decoding="async"></div>
+    </figure>
+    <div class="cp-split cp-split--results">
+      <ul class="cp-list">
+        <li>Checks 199 cash movements (trades, dividends, fees, FX) and 45 share positions.</li>
+        <li>Sorts 35 breaks by age and priority, each with a likely cause and a next action.</li>
+        <li>Produces an Excel report with a daily sign-off checklist for the team lead.</li>
+        <li>AI is used only to explain breaks in clearer words. The matching uses fixed rules, so results are repeatable and easy to audit.</li>
+      </ul>
+      <figure class="cp-excel">
+        <div class="cp-shot"><img src="../assets/recondesk/5-excel-signoff.jpg" width="985" height="1307" alt="The Excel report: ReconDesk Daily Custody Reconciliation Control for business date 2026-10-23, generated by rules only with AI disabled. Cash: 199 items, 173 matched, 26 breaks, 86.9% match rate. Stock: 45 items, 36 matched, 9 breaks, 80.0% match rate. Cash and stock breaks by type with counts and values, and a sign-off checklist with prepared-by and reviewed-by fields." loading="lazy" decoding="async"></div>
+        <figcaption class="mono">The Excel sign-off report · synthetic data, live formulas</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ LEARNINGS ============================ -->
+<section class="section section--alt cp-sec" id="learnings" aria-labelledby="learnTitle">
+  <div class="wrap cp-two">
+    <div>
+      <p class="kicker">What I learned</p>
+      <h2 class="sec-title cp-h2-sm" id="learnTitle">About working with AI</h2>
+      <ul class="cp-list">
+        <li>AI writes code fast, but a rule that "looks fine" can hide real problems. Testing against known answers is what caught it.</li>
+        <li>Use AI where judgement and wording help (explaining a break), and fixed rules where results must be exact and repeatable (matching money).</li>
+        <li>Asking AI to review my work against real industry practice was as useful as asking it to write code.</li>
+      </ul>
+    </div>
+    <div>
+      <p class="kicker">Tools</p>
+      <h2 class="sec-title cp-h2-sm">What it's built with</h2>
+      <div class="project__tools cp-stack"><span>Claude</span><span>Gemini</span><span>Python</span><span>Excel</span><span>GitHub</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ HONESTY NOTES ============================ -->
+<section class="section section--tight cp-sec cp-sec--last" aria-labelledby="honestTitle">
+  <div class="wrap">
+    <aside class="cp-honest glass">
+      <p class="kicker" id="honestTitle">Honesty notes</p>
+      <ul class="cp-list">
+        <li>All data is synthetic, created for this portfolio demonstration. No real bank or client data is used.</li>
+        <li>The 3% flaw was flagged by an AI review. I confirmed it by checking the tool against test data with known answers.</li>
+        <li>AI (Gemini, then Claude) wrote and extended the code. I decided what the tool had to check and tested every result before accepting it.</li>
+      </ul>
+    </aside>
+    <div class="cp-end cp-actions">
+      <a class="btn btn--ghost" href="../index.html#projects"><span aria-hidden="true">←</span> Back to AI Work</a>
+      <a class="btn btn--ghost" href="https://github.com/Salil360-cyber/ReconDesk-Custody-Cash-Stock-Break-Reconciliation" target="_blank" rel="noopener">View on GitHub <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============================ FOOTER (same as the home page) ============================ -->
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <div>
+      <p class="footer__name">Salil Gokhale</p>
+      <p class="footer__roles mono">AI Generalist • AI Researcher • AI Practitioner • AI Explorer</p>
+      <p class="footer__tag">Understanding AI. Questioning AI. Applying it well.</p>
+    </div>
+    <nav aria-label="Footer">
+      <p class="footer__label mono">Sections</p>
+      <ul class="footer__links">
+        <li><a href="../index.html#about">About</a></li><li><a href="../index.html#projects">AI Work</a></li><li><a href="../index.html#research">Research</a></li>
+        <li><a href="../index.html#certifications">Certifications</a></li><li><a href="../index.html#resume">Resume</a></li><li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div>
+      <p class="footer__label mono">Elsewhere</p>
+      <ul class="footer__links">
+        <li><a href="https://www.linkedin.com/in/salil-gokhale-analytics" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/Salil360-cyber" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="mailto:gokhalesalil28@gmail.com">Email</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer__base mono">
+    <span>© <span id="year">2026</span> Salil Gokhale. All rights reserved.</span>
+  </div>
+</footer>
+
+<script src="../js/case-page.js"></script>
+</body>
+</html>
