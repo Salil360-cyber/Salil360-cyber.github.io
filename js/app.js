@@ -1086,6 +1086,7 @@
     var it = index[+btn.dataset.idx];
     closeSearch(false);
     if (it.href) {
+      if (it.href.charAt(0) !== "#") { location.href = it.href; return; }   // e.g. a case study with its own page
       if (location.hash === it.href) route(true); else location.hash = it.href;
     } else if (it.action) it.action();
   }
