@@ -107,7 +107,11 @@ R.certifications.forEach(c => {
 });
 
 children.push(heading(R.languages && R.languages.length ? "Education & Languages" : "Education"));
-R.education.forEach(e => children.push(titleLine(e.degree, e.date, e.school)));
+// Degree and date on one line, the full institution name below it (long names would push the date onto a second line)
+R.education.forEach(e => {
+  children.push(titleLine(e.degree, e.date));
+  if (e.school) children.push(new Paragraph({ spacing: { after: 30 }, children: [run(e.school, { size: 19, color: MUTED, italics: true })] }));
+});
 
 if (R.languages && R.languages.length) {
   children.push(new Paragraph({ spacing: { before: 60 }, children: [run("Languages: ", { bold: true, size: 19 }), run(R.languages.join(", "), { size: 19 })] }));

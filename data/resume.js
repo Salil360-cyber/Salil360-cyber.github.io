@@ -87,7 +87,7 @@ SITE.resume = {
     }
   ],
   "education": [
-    { "degree": "MBA, Data Science and Business Analytics", "school": "DY Patil University", "date": "2026 – 2028 (expected)" },
+    { "degree": "MBA, Data Science and Business Analytics", "school": "Dr. DY Patil University (Online), Navi Mumbai, Maharashtra", "date": "2026 – 2028 (expected)" },
     { "degree": "B.Sc., Microbiology", "school": "Dhote Bandhu Science College, Gondia, Maharashtra", "date": "2024" }
   ],
   "languages": ["English", "Hindi", "Marathi", "Gujarati", "Tamil", "Telugu", "Kannada"],
