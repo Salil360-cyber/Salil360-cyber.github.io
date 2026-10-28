@@ -4,11 +4,13 @@
      so it follows the cursor anywhere on the page, not only over the robot.
    - Introduces Salil sentence by sentence in a speech bubble, with an optional
      natural voice (Web Speech API). No extra hand gestures.
+   - Performance: loads after the page, renders at 1x pixel ratio, and pauses off screen.
    - Needs an internet connection (the robot loads from Spline). If it can't load, or
      WebGL is missing, the Desk Monitor stays in place. */
 (function () {
   const RUNTIME = "https://unpkg.com/@splinetool/runtime@2.0.66/build/runtime.js";
   const SCENE = "https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode";
+  const PIXEL_RATIO_CAP = 1;    // max render resolution (see below)
 
   const wrap = document.querySelector(".robot");
   if (!wrap) return;
@@ -124,25 +126,52 @@
   }, { passive: true });
   hero.addEventListener("pointerleave", () => { wrap.classList.remove("robot--lit"); centerSpot(); });
 
-  /* ---------------- load the Spline robot */
+  /* ---------------- load the Spline robot
+     Performance: the robot loads only after the page has finished loading (so scrolling
+     and first paint stay smooth), and it renders only while the hero is on screen.
+     Off screen or in a background tab, the scene is paused and costs nothing. */
   wrap.classList.add("robot--loading");
   const fail = () => { wrap.classList.remove("robot--loading", "robot--ready"); };
-  const giveUp = setTimeout(fail, 45000);              // slow or blocked network: keep the Desk Monitor
-  import(RUNTIME).then(({ Application }) => {
-    const app = new Application(canvas);
-    return app.load(SCENE).then(() => { try { app.setGlobalEvents(true); } catch (e) {} return app; });
-  }).then((app) => {
-    clearTimeout(giveUp);
-    ready = true;
-    wrap.classList.remove("robot--loading");
-    wrap.classList.add("robot--ready");
-    // the stage changes size when it swaps in for the Desk Monitor: let the scene re-fit
-    requestAnimationFrame(() => { window.dispatchEvent(new Event("resize")); sx = tx; sy = ty; });
-    centerSpot();
-    if (voiceBtn && "speechSynthesis" in window) voiceBtn.hidden = false;
-    if (reduce) { try { app.stop && app.stop(); } catch (e) {} say.textContent = INTRO[0].text; bubble.classList.add("is-on", "is-done"); }
-    else if (!finePointer && "IntersectionObserver" in window) {
-      new IntersectionObserver((e, o) => { if (e[0].isIntersecting) { o.disconnect(); setTimeout(() => startIntro(0), 1200); } }).observe(stage);
-    }
-  }).catch(() => { clearTimeout(giveUp); fail(); });
+  let giveUp = 0, app = null, onScreen = true, playing3d = true;
+  function setRunning(run) {
+    if (!app || reduce || run === playing3d) return;
+    playing3d = run;
+    try { run ? app.play() : app.stop(); } catch (e) {}
+    try { app.setGlobalEvents(run); } catch (e) {}
+  }
+  const syncRunning = () => setRunning(onScreen && !document.hidden);
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver((e) => { onScreen = e[0].isIntersecting; syncRunning(); }, { rootMargin: "120px 0px" }).observe(stage);
+  }
+  document.addEventListener("visibilitychange", syncRunning);
+
+  function boot() {
+    giveUp = setTimeout(fail, 45000);                  // slow or blocked network: keep the Desk Monitor
+    import(RUNTIME).then(({ Application }) => {
+      app = new Application(canvas);
+      // Render at no more than 1x pixel ratio: on laptop/phone screens (1.25x–3x) this cuts the
+      // robot's GPU work by 1.5–9x, which is what keeps scrolling and the cursor smooth.
+      try { app._getPixelRatio = () => Math.min(window.devicePixelRatio || 1, PIXEL_RATIO_CAP); } catch (e) {}
+      return app.load(SCENE).then(() => { try { app.setGlobalEvents(true); } catch (e) {} return app; });
+    }).then(() => {
+      clearTimeout(giveUp);
+      ready = true;
+      wrap.classList.remove("robot--loading");
+      wrap.classList.add("robot--ready");
+      // the stage changes size when it swaps in for the Desk Monitor: let the scene re-fit
+      requestAnimationFrame(() => { window.dispatchEvent(new Event("resize")); sx = tx; sy = ty; });
+      centerSpot();
+      if (voiceBtn && "speechSynthesis" in window) voiceBtn.hidden = false;
+      if (reduce) { try { app.stop && app.stop(); } catch (e) {} say.textContent = INTRO[0].text; bubble.classList.add("is-on", "is-done"); }
+      else {
+        syncRunning();                                  // already scrolled away? pause straight away
+        if (!finePointer && "IntersectionObserver" in window) {
+          new IntersectionObserver((e, o) => { if (e[0].isIntersecting) { o.disconnect(); setTimeout(() => startIntro(0), 1200); } }).observe(stage);
+        }
+      }
+    }).catch(() => { clearTimeout(giveUp); fail(); });
+  }
+  // start after the page has loaded and the browser is idle
+  const later = () => ("requestIdleCallback" in window ? requestIdleCallback(boot, { timeout: 2500 }) : setTimeout(boot, 800));
+  if (document.readyState === "complete") later(); else window.addEventListener("load", later, { once: true });
 })();
