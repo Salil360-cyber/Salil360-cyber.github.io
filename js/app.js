@@ -1042,7 +1042,7 @@
     var box = $("#searchResults");
     searchActive = -1;
     if (!q) {
-      box.innerHTML = '<p class="sr-hint">Search across ' + projects.length + " projects, " + research.length + " research studies, " + (S.certifications || []).length + " certifications" + (articles.length ? ", " + articles.length + " articles" : "") + " and " + S.topics.length + " topics. Try “FitAI”, “prompt” or “Gemini”.</p>";
+      box.innerHTML = '<p class="sr-hint">Search across ' + projects.length + " projects, " + research.length + " research studies, " + (S.certifications || []).length + " certifications" + (articles.length ? ", " + articles.length + " articles" : "") + " and " + S.topics.length + " topics. Try “SBMA”, “prompt” or “Gemini”.</p>";
       return;
     }
     var terms = q.split(/\s+/).filter(Boolean);

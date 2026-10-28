@@ -24,29 +24,6 @@ SITE.showPlannedProjects = false;
 
 SITE.projects = [
   {
-    slug: "fitai",
-    name: "FitAI — AI-Powered Fitness & Workout Companion",
-    status: "Prototype",
-    date: "2026",
-    featured: true,
-    tagline: "AI fitness companion · prototype with a deployed backend",
-    featuredSummary: "A self-initiated AI fitness companion taken from user research to a working prototype: onboarding, workout execution, progress tracking and an AI coach, backed by server-side AI workout generation on a deployed Node.js and PostgreSQL backend.",
-    problem: "Fitness apps either give generic plans or overwhelm beginners. Few explain why a workout was chosen.",
-    solution: "Researched, designed and prototyped an AI fitness companion (onboarding, workouts, progress tracking and an AI coach) on a Node.js / PostgreSQL backend with server-side AI workout generation.",
-    ai: ["Server-side AI workout generation", "Claude (AI-assisted design and development)"],
-    role: "UX research, information architecture, UI design, product direction",
-    outcome: "High-fidelity interactive prototype connected to a deployed Node.js / PostgreSQL backend. User-research survey running.",
-    evidence: [
-      "UX research foundation, competitive analysis and a live Google Forms user survey collecting real responses",
-      "High-fidelity interactive prototype: design system, onboarding, main app, workout execution and AI coach",
-      "Node.js, Express and PostgreSQL backend deployed on Render: authentication, profiles, workout catalog, session logging, progress tracking and AI workout generation"
-    ],
-    tools: ["Node.js", "Express", "PostgreSQL", "Render", "Google Forms"],
-    links: { github: null, demo: null, caseStudy: "case-fitai" },
-    screenshots: [],
-    topics: ["tools", "genai", "creativity"]
-  },
-  {
     slug: "corporate-data-analyzer",
     name: "AI-Powered Corporate Data Analyzer",
     status: "Completed",
@@ -70,6 +47,7 @@ SITE.projects = [
     slug: "sbma-ai",
     name: "SBMA AI — AI-Powered Business Intelligence Command Center",
     status: "Published",
+    featured: true,
     date: "2026",
     tagline: "Published · functional AI data analysis and decision-support application",
     problem: "AI chat tools often approximate or invent numbers when asked to calculate over spreadsheet data, and sending whole files to an AI model exposes raw records.",
@@ -173,25 +151,6 @@ SITE.projects = [
    lessons → remaining (what's unfinished) → next
    Any section left null is hidden. Fill them only with real information. */
 SITE.caseStudies = [
-  {
-    slug: "case-fitai",
-    project: "fitai",
-    title: "FitAI: Designing an AI Coach People Can Trust",
-    summary: "A self-initiated product case study, from user research to a working prototype with server-side AI workout generation.",
-    topics: ["tools", "genai", "creativity"],
-    sections: {
-      challenge: "Design an AI fitness companion that feels personal and motivating without pretending to be a human trainer, and that explains its recommendations.",
-      role: "UX research, information architecture, UI design and product direction, with AI-assisted development for the build.",
-      approach: "Built a UX research foundation, ran a competitive and reference analysis of existing fitness apps, and launched a Google Forms user-research survey, linked to a Google Sheet, collecting real responses.",
-      stack: ["Claude", "Server-side AI workout generation", "Node.js / Express", "PostgreSQL", "Render"],
-      implementation: "How-Might-We framing and opportunity mapping, a prioritized feature map, information architecture, user flows and low-fidelity wireframe specs, then a high-fidelity interactive prototype (design system, onboarding, main app, workout execution, AI coach) connected to a Node.js / Express / PostgreSQL backend.",
-      testing: "User needs are being tested through a live Google Forms survey collecting real responses.",
-      outcome: "A high-fidelity interactive prototype connected to a live backend on Render handling auth, profiles, workout catalog, session logging, progress tracking and AI workout generation.",
-      lessons: null, // add: honest lessons from building it
-      remaining: "The survey is still collecting responses, so its analysis isn't written up yet. There is no public demo link yet.",
-      next: null     // add: the next real step
-    }
-  },
   {
     slug: "case-sbma",
     project: "sbma-ai",

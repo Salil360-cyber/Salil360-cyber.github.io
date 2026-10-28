@@ -15,7 +15,7 @@ SITE.profile = {
   heroSub:
     "I research, test and build with AI: applications, workflows and AI-powered analytics.",
   heroIntro:
-    "I'm Salil Gokhale, an AI Generalist. I've built FitAI, an AI fitness prototype with a deployed backend, a no-code Python data analyzer, and SBMA AI, a published AI data analysis command center. AI tools assist the work; the direction, testing and decisions are mine.",
+    "I'm Salil Gokhale, an AI Generalist. I've built a no-code Python data analyzer and SBMA AI, a published AI data analysis command center. AI tools assist the work; the direction, testing and decisions are mine.",
   location: "Maharashtra, India",
   timezone: "IST (UTC+05:30)",
   availability: "Open to AI projects, research and collaboration", // edit freely
@@ -52,7 +52,7 @@ SITE.profile = {
     strengths: [
       { title: "AI Research & Exploration", text: "Following new models and tools, going to documentation and primary sources, and stating uncertainty plainly." },
       { title: "AI Experimentation", text: "Testing AI tools hands-on with different prompts and inputs, and refining them until the output holds up." },
-      { title: "AI Application Building", text: "Taking AI products from research to prototype, such as FitAI with server-side AI workout generation." },
+      { title: "AI Application Building", text: "Taking AI products from research to a working application, such as SBMA AI." },
       { title: "AI Workflow Design", text: "Designing repeatable GenAI workflows with structured prompts (Ask → Context → Examples → Desired Output)." },
       { title: "AI-powered Data Analysis", text: "Using AI to support data exploration and analysis, applied in the AI-Powered Corporate Data Analyzer and SBMA AI." },
       { title: "AI Problem Solving", text: "Checking AI output for accuracy and reliability, adding guardrails where it fails, and keeping human judgment on every result." }
@@ -112,7 +112,7 @@ SITE.profile = {
     {
       year: "2026",
       title: "AI Generalist development",
-      text: "Completed the Vista Equity Partners AI in Action job simulation on Forage (Feb), the be10x AI Generalist program (Aug) and the Google AI Professional Certificate (Oct). Began an MBA in Data Science & Business Analytics. Built FitAI and this portfolio, and built and published SBMA AI (started Sept).",
+      text: "Completed the Vista Equity Partners AI in Action job simulation on Forage (Feb), the be10x AI Generalist program (Aug) and the Google AI Professional Certificate (Oct). Began an MBA in Data Science & Business Analytics. Built this portfolio, and built and published SBMA AI (started Sept).",
       note: null
     },
     {
@@ -143,7 +143,7 @@ SITE.profile = {
       group: "AI Tools",
       items: [
         { name: "ChatGPT", level: "Core", use: "Prompt engineering and GenAI workflows", evidence: [{ label: "Vista job simulation", href: "#c-vista-ai-in-action-job-simulation" }] },
-        { name: "Claude", level: "Core", use: "AI-assisted development and research", evidence: [{ label: "FitAI", href: "#project-fitai" }, { label: "This portfolio", href: "#project-ai-desk-portfolio" }] },
+        { name: "Claude", level: "Core", use: "AI-assisted development and research", evidence: [{ label: "This portfolio", href: "#project-ai-desk-portfolio" }] },
         { name: "Gemini", level: "Working", use: "Generative AI, research and AI app building", evidence: [{ label: "SBMA AI", href: "#project-sbma-ai" }, { label: "Google AI certificate", href: "#c-google-ai-professional-certificate" }] },
         { name: "Perplexity", level: "Working", use: "AI-assisted research with sources" },
         { name: "NotebookLM", level: "Working", use: "Research and document synthesis", evidence: [{ label: "Google AI certificate", href: "#c-google-ai-professional-certificate" }] },
@@ -156,7 +156,7 @@ SITE.profile = {
       group: "AI Applications",
       items: [
         { name: "AI Workflow Automation", level: "Working", evidence: [{ label: "Vista job simulation", href: "#c-vista-ai-in-action-job-simulation" }] },
-        { name: "AI App Building", level: "Working", evidence: [{ label: "FitAI", href: "#project-fitai" }, { label: "SBMA AI", href: "#project-sbma-ai" }] },
+        { name: "AI App Building", level: "Working", evidence: [{ label: "SBMA AI", href: "#project-sbma-ai" }] },
         { name: "AI-assisted Data Analysis", level: "Working", evidence: [{ label: "Corporate Data Analyzer", href: "#project-corporate-data-analyzer" }, { label: "SBMA AI", href: "#project-sbma-ai" }] },
         { name: "AI-powered Content Creation", level: "Working", evidence: [{ label: "Google AI certificate", href: "#c-google-ai-professional-certificate" }] },
         { name: "AI Agents", level: "Learning", evidence: [{ label: "be10x AI Generalist", href: "#c-be10x-ai-generalist" }] },
@@ -171,7 +171,7 @@ SITE.profile = {
         { name: "JavaScript", level: "Learning", evidence: [{ label: "This portfolio", href: "#project-ai-desk-portfolio" }] },
         { name: "Python (Pandas, Matplotlib)", level: "Working", use: "Data analysis and charts", evidence: [{ label: "Corporate Data Analyzer", href: "#project-corporate-data-analyzer" }] },
         { name: "Data Visualization", level: "Working", evidence: [{ label: "Corporate Data Analyzer", href: "#project-corporate-data-analyzer" }, { label: "SBMA AI", href: "#project-sbma-ai" }] },
-        { name: "Node.js & PostgreSQL (AI-assisted)", level: "Learning", use: "Backend and database", evidence: [{ label: "FitAI", href: "#project-fitai" }] },
+        { name: "Node.js & PostgreSQL (AI-assisted)", level: "Learning", use: "Backend and database" },
         { name: "GitHub", level: "Working" }
       ]
     }

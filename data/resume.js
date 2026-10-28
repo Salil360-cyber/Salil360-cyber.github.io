@@ -21,7 +21,7 @@ SITE.resume = {
     "github": "github.com/Salil360-cyber",
     "portfolio": null
   },
-  "summary": "AI Generalist who applies Generative AI, prompt engineering and AI tools to research, analytics, automation and content workflows. Certified through the Google AI Professional Certificate and the be10x AI Generalist program, with applied GenAI workflow automation practice from the Vista Equity Partners AI in Action job simulation. Builds and tests AI-assisted applications, from a fitness companion with server-side AI workout generation to a no-code Python data analysis tool, and evaluates AI output for accuracy, reliability and responsible use.",
+  "summary": "AI Generalist who applies Generative AI, prompt engineering and AI tools to research, analytics, automation and content workflows. Certified through the Google AI Professional Certificate and the be10x AI Generalist program, with applied GenAI workflow automation practice from the Vista Equity Partners AI in Action job simulation. Builds and tests AI-assisted applications, from SBMA AI, a published AI data analysis command center, to a no-code Python data analysis tool, and evaluates AI output for accuracy, reliability and responsible use.",
   "skills": [
     { "label": "AI & Generative AI", "items": ["Artificial Intelligence", "Generative AI", "Prompt Engineering", "AI Research", "Responsible AI"] },
     { "label": "AI Applications", "items": ["AI Workflow Automation", "AI Agents", "AI App Building", "AI-powered Research", "AI Content Creation", "AI-assisted Data Analysis"] },
@@ -32,16 +32,6 @@ SITE.resume = {
   ],
   "experience": [],
   "projects": [
-    {
-      "name": "FitAI — AI-Powered Fitness & Workout Companion",
-      "context": "Self-initiated AI product",
-      "date": "2026",
-      "bullets": [
-        "Researched user needs through UX research, competitive analysis and a live Google Forms user survey.",
-        "Designed information architecture, user flows and a high-fidelity interactive prototype covering onboarding, workouts and an AI coach.",
-        "Built and deployed a Node.js, Express and PostgreSQL backend on Render with authentication, progress tracking and server-side AI workout generation, using AI-assisted development."
-      ]
-    },
     {
       "name": "AI-Powered Corporate Data Analyzer",
       "context": "Python desktop application",

@@ -64,7 +64,7 @@ The site never invents credentials, numbers or results, and it never shows unfin
 |---|---|---|
 | `data/articles.js` | All 9 articles are **sample drafts** (`sample: true`) and are **hidden**. The Insights section shows "Articles are in progress" until a real one exists. | Publish an article by writing it in your words and setting `sample: false`. `SITE.showSampleArticles = true` previews samples locally only. |
 | `data/projects.js` | Projects with `status: "Planned"` are **hidden** (grid, search, topic counts, AI Desk). Buttons (GitHub, Live Demo, Case Study) appear **only** when a real link is set in `links`. | Add real `links.github` / `links.demo` URLs when they exist. Add real screenshots to `/assets` and list them in `screenshots`. |
-| `data/projects.js → featured` | FitAI is in the **Featured AI Work** slot (`featured: true`). | Move `featured: true` to another real project to change it. |
+| `data/projects.js → featured` | SBMA AI is in the **Featured AI Work** slot (`featured: true`). | Move `featured: true` to another real project to change it. |
 | `data/projects.js → caseStudies` | Sections: challenge, role, approach, stack, implementation, testing, outcome, lessons, remaining ("Still open"), next. Any set to `null` is **hidden**. | Fill `lessons` / `next` with real information when you have it; update `remaining` as work is finished. |
 | `data/profile.js → stats` | Stats with `value: null` are hidden; with none filled in, the whole panel is hidden. | Add real counts only. |
 | `data/profile.js → socials` | Entries with `url: null` (Medium/Substack, X) are hidden. | Add a URL to show one. |
@@ -116,7 +116,7 @@ Research, projects, certifications and topics follow the same pattern — the co
 
 - **Hero** with a live desk monitor (canvas signal map + illustrative workflow loop) and IST clock
 - **Sticky nav** with active-section highlight, search, dark/light toggle, Resume button, mobile menu
-- **Featured AI Work** slot (FitAI); **AI Writing & Insights** with category filters and an **article reader** (progress bar, byline, sources, share links, related articles)
+- **Featured AI Work** slot (SBMA AI); **AI Writing & Insights** with category filters and an **article reader** (progress bar, byline, sources, share links, related articles)
 - **Research** cards that expand to context, methodology, findings, visualisation slot, sources, report link
 - **Projects** (problem, solution, AI used, role, outcome, tools) + **Case studies** that open in the reader
 - **Topic explorer (What I Explore)** — clicking a topic filters projects, research and articles together
@@ -186,17 +186,17 @@ Fonts (Newsreader, Hanken Grotesk, JetBrains Mono) load from Google Fonts, with 
 ## 11. Projects
 
 - **Cards** show what it is, the problem, what was built, AI used, tools, status and real buttons only. Clicking a card (or **View Project**) opens the full detail in the reader: status, problem, approach, AI used, tools, role, current state, evidence, links, screenshots and case study. Only fields with real content are shown.
-- **Direct link** to a project: `yoursite.com/#project-<slug>` (e.g. `#project-fitai`).
+- **Direct link** to a project: `yoursite.com/#project-<slug>` (e.g. `#project-sbma-ai`).
 - **Status filter** chips group projects as Built (Live, Published, Completed), In progress (Prototype, In development) and Experiments.
-- **Featured AI Work** shows the project with `featured: true` (currently FitAI).
+- **Featured AI Work** shows the project with `featured: true` (currently SBMA AI).
 
 ---
 
 ## 12. Recruiter path (how the page is ordered)
 
 - **Hero buttons:** *Explore AI Work* (jumps to the projects) and *View Resume* (opens the resume viewer).
-- **Page order:** About → Featured AI Work (FitAI) → AI Projects & Experiments (+ case studies) → Research → Workflow → Topics → Principles → Toolkit → Certifications → Journey → Insights → Contact.
+- **Page order:** About → Featured AI Work (SBMA AI) → AI Projects & Experiments (+ case studies) → Research → Workflow → Topics → Principles → Toolkit → Certifications → Journey → Insights → Contact.
 - **Navigation:** Home, About, AI Work, Research, Topics, Toolkit, Certifications, Contact. *Insights* appears in the nav and footer automatically once a real article is published (`sample: false`).
-- **Case-study list:** shows FitAI and SBMA AI. The portfolio's own case study has `listed: false`, so it's reachable from the portfolio project instead of being featured twice.
+- **Case-study list:** shows SBMA AI. The portfolio's own case study has `listed: false`, so it's reachable from the portfolio project instead of being featured twice.
 - **Toolkit:** each item can have `use` (why it's used) and `evidence` (in-page links to the project, certification or research where it was used), e.g. `{ label: "Corporate Data Analyzer", href: "#project-corporate-data-analyzer" }`. Only link real work.
 - **Contact:** *Email Salil*, plus LinkedIn and GitHub buttons that appear only when those profiles are set in `profile.js → socials`.
