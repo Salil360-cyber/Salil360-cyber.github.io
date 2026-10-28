@@ -448,13 +448,16 @@
   function stageOf(p) { var g = STAGES.filter(function (x) { return x.statuses.indexOf(p.status) !== -1; })[0]; return g ? g.id : "other"; }
   function caseById(slug) { return slug ? (S.caseStudies || []).filter(function (c) { return c.slug === slug; })[0] : null; }
   function projectHref(p) { return "#project-" + p.slug; }
+  // A case study with its own page (e.g. projects/brandforge-ai.html) links there; others open in the reader
+  function casePage(c) { return c && typeof c.page === "string" && /^projects\/[a-z0-9-]+\.html$/.test(c.page) ? c.page : null; }
+  function caseHref(c) { return casePage(c) || "#" + c.slug; }
   function realUrl(u) { return typeof u === "string" && /^https?:\/\//.test(u); }
   // Action buttons — only for destinations that really exist
   function projectActions(p, opts) {
     var L = p.links || {}, out = [], small = opts.small ? " btn--small" : "";
     if (opts.detail) out.push('<a class="btn' + small + ' ' + (opts.primaryDetail ? "btn--primary" : "btn--ghost") + '" href="' + projectHref(p) + '">View Project <span aria-hidden="true">→</span></a>');
     var cs = caseById(L.caseStudy);
-    if (cs && !opts.noCase) out.push('<a class="btn' + small + ' btn--ghost" href="#' + esc(cs.slug) + '">Read Case Study</a>');
+    if (cs && !opts.noCase) out.push('<a class="btn' + small + ' btn--ghost" href="' + esc(caseHref(cs)) + '">Read Case Study</a>');
     if (L.internal && L.internal.href && L.internal.href.charAt(0) === "#" && L.internal.href.length > 1) out.push('<a class="btn' + small + ' btn--ghost" href="' + esc(L.internal.href) + '">' + esc(L.internal.label || "Open") + "</a>");
     if (realUrl(L.demo)) out.push('<a class="btn' + small + ' btn--ghost" href="' + esc(L.demo) + '" target="_blank" rel="noopener">Live Demo <span aria-hidden="true">↗</span></a>');
     if (realUrl(L.github)) out.push('<a class="btn' + small + ' btn--ghost" href="' + esc(L.github) + '" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>');
@@ -466,6 +469,7 @@
       return "<div><dt>" + label + "</dt><dd>" + esc(val) + "</dd></div>";
     };
     return '<article class="project reveal" id="p-' + esc(p.slug) + '" data-href="' + projectHref(p) + '">' +
+      (p.thumb && p.thumb.src ? '<a class="cover project__thumb" href="' + projectHref(p) + '" tabindex="-1" aria-hidden="true"><img src="' + esc(p.thumb.src) + '" alt="" loading="lazy" decoding="async"></a>' : "") +
       '<div class="project__head"><h3><a href="' + projectHref(p) + '">' + esc(p.name) + "</a></h3>" + statusPill(p.status) + "</div>" +
       (p.tagline ? '<p class="project__tagline">' + esc(p.tagline) + "</p>" : "") +
       "<dl>" + row("Problem", p.problem) + row("What I built", p.solution) + row("My role", p.role) + row("AI used", (p.ai || []).join(" · ")) + "</dl>" +
@@ -496,7 +500,7 @@
         .map(function (l) { return "<span>" + l[1] + "</span>"; }).join("");
       return '<article class="case reveal"><p class="kicker">Case study</p><h3>' + esc(c.title) + "</h3><p>" + esc(c.summary) + "</p>" +
         '<p class="case__steps">' + steps + "</p>" +
-        '<a class="btn btn--small btn--primary" href="#' + esc(c.slug) + '">Read Case Study <span aria-hidden="true">→</span></a></article>';
+        '<a class="btn btn--small btn--primary" href="' + esc(caseHref(c)) + '">Read Case Study <span aria-hidden="true">→</span></a></article>';
     }).join("");
     $("#caseTitle").hidden = cases.length === 0;
     observeReveal($("#projectGrid")); observeReveal($("#caseGrid"));
@@ -907,7 +911,7 @@
       row("My role", para(p.role)) +
       row("Current state", para(p.outcome)) +
       row("Evidence", evidence.length ? '<ul class="cert__ul">' + evidence.map(function (e) { return "<li>" + esc(e) + "</li>"; }).join("") + "</ul>" : "") +
-      row("Case study", cs ? '<p><a class="btn btn--small btn--primary" href="#' + esc(cs.slug) + '">' + esc(cs.title) + ' <span aria-hidden="true">→</span></a></p>' : "") +
+      row("Case study", cs ? '<p><a class="btn btn--small btn--primary" href="' + esc(caseHref(cs)) + '">' + esc(cs.title) + ' <span aria-hidden="true">→</span></a></p>' : "") +
       "</div>";
     document.title = p.name + " — " + P.name;
     showReader();
@@ -980,6 +984,7 @@
       if (pj) { readerOpenedByHash = !!fromNav; openProject(pj); return; }
     }
     var c = (S.caseStudies || []).filter(function (x) { return x.slug === h; })[0];
+    if (c && casePage(c)) { location.href = casePage(c); return; }
     if (c) { readerOpenedByHash = !!fromNav; openCase(c); return; }
     if (!reader.hidden) hideReader();
     if (h.indexOf("r-") === 0) openResearch(h.slice(2));
@@ -1008,7 +1013,7 @@
       index.push({ type: "Projects", title: p.name, sub: p.status + " · " + p.solution, text: [p.name, p.status, p.problem, p.solution, p.role || "", p.outcome || "", (p.evidence || []).join(" "), p.tools.join(" "), (p.ai || []).join(" ")].join(" "), href: projectHref(p) });
     });
     (S.caseStudies || []).forEach(function (c) {
-      index.push({ type: "Projects", title: c.title, sub: "Case study · " + c.summary, text: [c.title, c.summary].join(" "), href: "#" + c.slug });
+      index.push({ type: "Projects", title: c.title, sub: "Case study · " + c.summary, text: [c.title, c.summary].join(" "), href: caseHref(c) });
     });
     (S.certifications || []).forEach(function (c) {
       index.push({ type: "Certifications", title: c.title, sub: c.issuer + (c.platform ? " · " + c.platform : "") + " · " + fmtDate(c.date), text: [c.title, c.program || "", c.issuer, c.platform || "", c.type || "", (c.description || []).join(" "), (c.modules || []).map(function (m) { return m.title + " " + m.text; }).join(" "), (c.lists || []).map(function (l) { return l.items.join(" "); }).join(" "), (c.skills || []).join(" "), (c.tools || []).join(" "), (c.focus || []).join(" ")].join(" "), action: function () {

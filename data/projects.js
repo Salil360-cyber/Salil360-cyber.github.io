@@ -78,6 +78,36 @@ SITE.projects = [
     topics: ["business", "tools", "genai"]
   },
   {
+    slug: "brandforge-ai",
+    name: "BrandForge AI",
+    status: "Completed",
+    date: "2026",
+    tagline: "9-step pipeline · 3-tier AI fallback · ₹0 running cost",
+    featuredSummary: "An AI brand identity studio that turns a business idea into a complete brand kit in minutes, built 100% on free-tier AI.",
+    problem: "Building a brand identity takes weeks and costs thousands at an agency, and the original course workflow needed 6+ separate tools.",
+    solution: "An AI brand identity studio that turns a business idea into a complete brand kit in minutes, built 100% on free-tier AI.",
+    ai: ["Gemini API (free tier)", "Prompt engineering", "Google AI Studio (Build mode)"],
+    role: "Solo builder: product idea, prompt design, architecture decisions, testing and iteration",
+    outcome: "A 9-step app: brief, names, palette, logo, mockups, motion reel, content calendar, landing page and a downloadable brand kit. Built and bug-fixed over 2 days.",
+    evidence: [
+      "9-step flow from a short brief to PDF guidelines and a ZIP of all assets",
+      "3-tier image fallback: Gemini → Pollinations.ai → rendered SVG mockups, with a badge showing the source",
+      "Runs on free-tier AI only (₹0 running cost); quota errors are caught and switched to a backup",
+      "Step 6 is a browser-rendered Motion Reel (HTML Canvas + MediaRecorder), not AI-generated video"
+    ],
+    tools: ["Gemini API", "Prompt Engineering", "Google AI Studio", "React", "TypeScript", "Canvas API"],
+    links: { github: null, demo: null, caseStudy: "case-brandforge" }, // demo: add the Google AI Studio share link
+    screenshots: [
+      {
+        src: "assets/brandforge/03-names.jpg",
+        width: 1600, height: 703,
+        alt: "BrandForge AI Step 2, Curated Brand Names: six AI-suggested names with taglines and strategic rationale, Jolly Beans Coffee selected.",
+        caption: "Step 2 · Brand Names for the Jolly Beans Coffee preset"
+      }
+    ],
+    topics: ["creativity", "genai", "tools"]
+  },
+  {
     slug: "ai-desk-portfolio",
     name: "The AI Desk — AI Generalist Portfolio",
     status: "Live",
@@ -169,7 +199,27 @@ SITE.caseStudies = [
       remaining: "On the documented roadmap, not built yet: persistent storage (PostgreSQL / Cloud SQL), user accounts with role-based access, streaming AI responses (SSE), external database connectors, scheduled email and webhook alerts, and multi-user collaboration. Today, data resets on page refresh and the app is suited to datasets of about 100,000 rows.",
       next: null
     }
+  },  {
+    slug: "case-brandforge",
+    project: "brandforge-ai",
+    page: "projects/brandforge-ai.html",   // full case study lives on its own page
+    title: "BrandForge AI: A Complete Brand Kit on Free-Tier AI",
+    summary: "From a short business brief to names, palette, logo, mockups, a motion reel and a downloadable brand kit, in one app at ₹0 running cost.",
+    topics: ["creativity", "genai", "tools"],
+    sections: {
+      challenge: "A brand identity takes weeks and 6+ separate tools.",
+      role: "Solo builder",
+      approach: "Learn → Explore → Experiment → Build → Analyze → Apply",
+      implementation: "9-step app with a 3-tier image fallback",
+      stack: ["Google AI Studio", "Gemini API", "React", "TypeScript", "Canvas API"],
+      testing: "Tested with a coffee brand and a SaaS brand",
+      outcome: "Complete brand kit in one app at ₹0 running cost",
+      lessons: "Designing for failure is what makes an AI product usable.",
+      remaining: null,
+      next: "Real AI video generation if a budget becomes available"
+    }
   },
+
   {
     slug: "case-portfolio",
     project: "ai-desk-portfolio",

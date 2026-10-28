@@ -909,3 +909,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .ticker__track { animation: none; }
   .pipeline::after { display: none; }
 }
+
+/* Optional project card thumbnail (data/projects.js → thumb: { src }) */
+.project__thumb { display: block; margin: -10px -10px 0; aspect-ratio: 16 / 9; }
+.project__thumb img { object-position: top center; }
