@@ -19,7 +19,7 @@ SITE.resume = {
     "email": "gokhalesalil28@gmail.com",
     "linkedin": "linkedin.com/in/salil-gokhale-analytics",
     "github": "github.com/Salil360-cyber",
-    "portfolio": null
+    "portfolio": "salil360-cyber.github.io"
   },
   "summary": "AI Generalist who applies Generative AI, prompt engineering and AI tools to research, analytics, automation and content workflows. Certified through the Google AI Professional Certificate and the be10x AI Generalist program, with applied GenAI workflow automation practice from the Vista Equity Partners AI in Action job simulation. Builds and tests AI-assisted applications, from SBMA AI, a published AI data analysis command center, to a no-code Python data analysis tool, and evaluates AI output for accuracy, reliability and responsible use.",
   "skills": [
