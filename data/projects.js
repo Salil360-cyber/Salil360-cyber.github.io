@@ -154,7 +154,7 @@ SITE.projects = [
       "Deterministic calculations for invoice totals, payment balances, reconciliation differences, financial ratios and forecasts (MAE, RMSE, WAPE backtesting)",
       "Explicit review and approval steps: extracted invoices, bank statement rows and destructive actions never post or delete silently",
       "Provenance labels separate actuals, manual inputs, extracted values, forecasts, demo records and AI commentary",
-      "A test runner inside each module: 285 checks reported across Phases 2–12 during development (implementation-reported, not an independent certification)"
+      "A test runner inside each module: all 285 checks across Phases 2–12 pass when re-run from the source code (the app's own tests, not an independent certification)"
     ],
     tools: ["React", "TypeScript", "Vite", "Tailwind CSS", "PDF.js", "Tesseract.js", "Gemini (optional)"],
     links: { github: null, demo: null, caseStudy: "case-finpilot" },
@@ -315,7 +315,7 @@ SITE.caseStudies = [
       approach: "Deterministic calculations, explicit approvals, provenance labels",
       implementation: "12 modules in a local-first React and TypeScript app",
       stack: ["React", "TypeScript", "Vite", "PDF.js", "Tesseract.js", "Gemini (optional)"],
-      testing: "285 in-app checks reported during development",
+      testing: "All 285 in-app checks pass on re-run",
       outcome: "Portfolio prototype on demo data",
       lessons: null,
       remaining: "Final hands-on QA",

@@ -102,7 +102,7 @@
     <dl class="cp-stats" aria-label="Project at a glance">
       <div><dt>12</dt><dd>finance modules in one app</dd></div>
       <div><dt>12</dt><dd>build phases, one module area at a time</dd></div>
-      <div><dt>285</dt><dd>in-app test checks (implementation-reported)</dd></div>
+      <div><dt>285/285</dt><dd>in-app test checks pass when re-run</dd></div>
     </dl>
   </div>
 </section>
@@ -145,7 +145,6 @@
         <p>Transaction management with search, filters, CSV import/export and auditable cancellation instead of silent deletion.</p>
       </li>
       <li class="cp-step">
-        <figure class="cp-step__shot"><img src="../assets/finpilot/invoice-generator.jpg" width="1600" height="716" alt="Smart Invoice Generator: total receivables $208,727, outstanding $161,227, settled $47,500, overdue $12,000, and a table of sales invoices by status." loading="lazy" decoding="async"></figure>
         <span class="cp-step__n mono">04</span><h3>Invoice Generator</h3>
         <p>Sales invoices with line-item and tax calculations, numbering, print-to-PDF and payment tracking, stored separately from vendor expenses.</p>
       </li>
@@ -172,7 +171,6 @@
         <p>Deterministic advisory signals with evidence drill-down and configurable thresholds; optional Gemini narrative on top.</p>
       </li>
       <li class="cp-step">
-        <figure class="cp-step__shot"><img src="../assets/finpilot/executive-reports.jpg" width="1600" height="703" alt="Executive Reports: consolidated executive financial indicators for a fictional demo company, including total revenue, operating expenses, net income and bank match rate." loading="lazy" decoding="async"></figure>
         <span class="cp-step__n mono">10</span><h3>Executive Reports</h3>
         <p>Seven report templates, period filters, provenance-aware figures, saved snapshots, CSV export and print-to-PDF.</p>
       </li>
@@ -272,9 +270,9 @@
     <header class="sec-head">
       <p class="kicker">Testing</p>
       <h2 class="sec-title" id="testTitle">A test suite inside every module</h2>
-      <p class="sec-lede">Each module has its own deterministic test runner in the app. The counts below were reported by the build environment during development; they are not an independent QA certification.</p>
+      <p class="sec-lede">Each module has its own deterministic test runner in the app. All 285 checks were re-run from the source code in a browser on 29 Oct 2026 and passed. These are the app's own tests, not an independent QA certification.</p>
     </header>
-    <div class="cp-tests" role="table" aria-label="Reported test checks by phase">
+    <div class="cp-tests" role="table" aria-label="Test checks by phase">
       <div role="row" class="cp-tests__head mono"><span role="columnheader">Phase</span><span role="columnheader">Module</span><span role="columnheader">Checks</span></div>
       <div role="row"><span role="cell" class="mono">2</span><span role="cell">Invoice Intelligence</span><span role="cell">10</span></div>
       <div role="row"><span role="cell" class="mono">3</span><span role="cell">Expense Ledger</span><span role="cell">16</span></div>
@@ -287,7 +285,7 @@
       <div role="row"><span role="cell" class="mono">10</span><span role="cell">Executive Reports</span><span role="cell">32</span></div>
       <div role="row"><span role="cell" class="mono">11</span><span role="cell">Settings &amp; Data</span><span role="cell">30</span></div>
       <div role="row"><span role="cell" class="mono">12</span><span role="cell">Help Center</span><span role="cell">30</span></div>
-      <div role="row" class="cp-tests__total"><span role="cell"></span><span role="cell">Total reported</span><span role="cell">285</span></div>
+      <div role="row" class="cp-tests__total"><span role="cell"></span><span role="cell">Total (all passing on re-run)</span><span role="cell">285</span></div>
     </div>
   </div>
 </section>
@@ -325,7 +323,7 @@
       <p class="kicker" id="honestTitle">Honesty notes</p>
       <ul class="cp-list">
         <li>FinPilot AI is a portfolio prototype. It is not certified accounting or tax software, an audited financial system, bank-connected, or a secure multi-user SaaS platform.</li>
-        <li>Test counts and build results are implementation-reported during development; final hands-on verification is tracked separately.</li>
+        <li>The 285 test checks are the app's own tests, re-run and passing on 29 Oct 2026. Some dashboard figures still mix demo scales and are being corrected; final hands-on verification is tracked separately.</li>
         <li>All screenshots use the app's demo mode. The company and people shown are fictional demo data.</li>
         <li>It is a decision-support demo and does not replace a qualified accountant, auditor, tax professional or investment adviser.</li>
       </ul>
