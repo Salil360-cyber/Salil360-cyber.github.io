@@ -139,6 +139,37 @@ SITE.projects = [
     topics: ["business", "tools", "genai"]
   },
   {
+    slug: "finpilot-ai",
+    name: "FinPilot AI — AI-Assisted Financial Operations Platform",
+    status: "Prototype",
+    date: "2026",
+    tagline: "12 finance modules · deterministic calculations · optional AI narrative",
+    featuredSummary: "A modular finance-operations web application that brings invoice review, ledger workflows, bank reconciliation, analytics, forecasting, annual-report extraction, AI-assisted commentary and executive reporting into one guided interface.",
+    problem: "Finance work is spread across disconnected steps: invoices, transaction records, receivables, bank reconciliation, analytics, forecasts, annual reports and management reporting.",
+    solution: "A finance-operations app that brings invoice review, ledger workflows, bank reconciliation, financial analytics, forecasting, annual-report extraction, AI-assisted commentary and executive reporting into one guided interface.",
+    ai: ["Optional Gemini narrative over deterministic advisory signals", "Deterministic fallback when no AI is configured"],
+    role: "Designed and built the application across 12 phases, with AI-assisted development",
+    outcome: "Portfolio prototype with 12 modules on demo data. Records are stored locally in the browser; final hands-on QA is tracked separately.",
+    evidence: [
+      "Deterministic calculations for invoice totals, payment balances, reconciliation differences, financial ratios and forecasts (MAE, RMSE, WAPE backtesting)",
+      "Explicit review and approval steps: extracted invoices, bank statement rows and destructive actions never post or delete silently",
+      "Provenance labels separate actuals, manual inputs, extracted values, forecasts, demo records and AI commentary",
+      "A test runner inside each module: 285 checks reported across Phases 2–12 during development (implementation-reported, not an independent certification)"
+    ],
+    tools: ["React", "TypeScript", "Vite", "Tailwind CSS", "PDF.js", "Tesseract.js", "Gemini (optional)"],
+    links: { github: null, demo: null, caseStudy: "case-finpilot" },
+    thumb: { src: "assets/finpilot/bank-reconciliation.jpg" },
+    screenshots: [
+      {
+        src: "assets/finpilot/bank-reconciliation.jpg",
+        width: 1600, height: 711,
+        alt: "FinPilot AI Bank Reconciliation in demo mode: statement closing $219,904.75, reconciled $195,829.50, unexplained difference $24,075.25, match rate 25%.",
+        caption: "Bank Reconciliation · demo data"
+      }
+    ],
+    topics: ["business", "tools", "genai"]
+  },
+  {
     slug: "ai-desk-portfolio",
     name: "The AI Desk — AI Generalist Portfolio",
     status: "Live",
@@ -269,6 +300,26 @@ SITE.caseStudies = [
       lessons: "Testing against known answers is what caught the hidden problem.",
       remaining: null,
       next: null
+    }
+  },
+  {
+    slug: "case-finpilot",
+    project: "finpilot-ai",
+    page: "projects/finpilot-ai.html",   // full case study lives on its own page
+    title: "FinPilot AI: Twelve Finance Workflows, One Guided Interface",
+    summary: "An AI-assisted financial operations prototype where code does the maths and AI only explains: invoices, ledger, reconciliation, analytics, forecasting and reporting.",
+    topics: ["business", "tools", "genai"],
+    sections: {
+      challenge: "Finance work is spread across disconnected steps and tools.",
+      role: "Designed and built across 12 phases",
+      approach: "Deterministic calculations, explicit approvals, provenance labels",
+      implementation: "12 modules in a local-first React and TypeScript app",
+      stack: ["React", "TypeScript", "Vite", "PDF.js", "Tesseract.js", "Gemini (optional)"],
+      testing: "285 in-app checks reported during development",
+      outcome: "Portfolio prototype on demo data",
+      lessons: null,
+      remaining: "Final hands-on QA",
+      next: "Server-side secrets, durable storage and authentication"
     }
   },
   {

@@ -170,3 +170,15 @@
   .cp-stats div { display: flex; align-items: baseline; gap: 14px; padding: 16px 18px; }
   .cp-stats dd { margin: 0; }
 }
+
+/* ---------- Additions for FinPilot AI (reported test table) ---------- */
+.cp-tests { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--bg); }
+.cp-tests > div { display: grid; grid-template-columns: 64px 1fr 80px; gap: 12px; padding: 11px 20px; border-top: 1px solid var(--line); align-items: baseline; }
+.cp-tests > div > span:last-child { text-align: right; font-family: var(--f-mono); color: var(--fg); }
+.cp-tests > div > span:nth-child(2) { color: var(--fg-2); }
+.cp-tests__head { border-top: 0 !important; background: var(--surface-2); color: var(--muted); text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.68rem !important; }
+.cp-tests__head > span:last-child { color: var(--muted) !important; font-size: 0.68rem; }
+.cp-tests__total { background: var(--accent-soft); }
+.cp-tests__total > span { color: var(--fg) !important; font-weight: 600; }
+.cp-tests__total > span:last-child { color: var(--accent) !important; }
+.cp-cs code { font-family: var(--f-mono); font-size: 0.85em; }

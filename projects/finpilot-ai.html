@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FinPilot AI — Case Study · Salil Gokhale</title>
+<meta name="description" content="FinPilot AI: an AI-assisted financial operations prototype that brings invoice review, ledger, invoicing, bank reconciliation, analytics, forecasting, annual-report intelligence, AI advisory and executive reporting into one interface. Case study by Salil Gokhale, AI Generalist.">
+<meta name="author" content="Salil Gokhale">
+<meta name="theme-color" content="#0a0c10" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f3f5f8" media="(prefers-color-scheme: light)">
+<link rel="canonical" href="https://salil360-cyber.github.io/projects/finpilot-ai.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Salil Gokhale — The AI Desk">
+<meta property="og:url" content="https://salil360-cyber.github.io/projects/finpilot-ai.html">
+<meta property="og:title" content="FinPilot AI — Case Study">
+<meta property="og:description" content="An AI-assisted financial operations and accounting intelligence platform: twelve finance workflows in one guided interface.">
+<meta property="og:image" content="https://salil360-cyber.github.io/assets/finpilot/bank-reconciliation.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FinPilot AI — Case Study">
+<meta name="twitter:description" content="An AI-assisted financial operations and accounting intelligence platform: twelve finance workflows in one guided interface.">
+<meta name="twitter:image" content="https://salil360-cyber.github.io/assets/finpilot/bank-reconciliation.jpg">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="../css/case-page.css">
+<script>try{var t=localStorage.getItem("desk-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+</head>
+<body class="cp">
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="readProgress" aria-hidden="true"></div>
+
+<!-- ============================ NAV (same as the home page) ============================ -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="brand" href="../index.html#home" aria-label="Salil Gokhale, home">
+      <span class="brand__mark" aria-hidden="true">SG</span>
+      <span class="brand__text"><span class="brand__name">Salil Gokhale</span><span class="brand__desk">The AI Desk</span></span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="../index.html#home">Home</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#projects" class="is-active">AI Work</a>
+      <a href="../index.html#research">Research</a>
+      <a href="../index.html#topics">Topics</a>
+      <a href="../index.html#skills">Toolkit</a>
+      <a href="../index.html#certifications">Certifications</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <div class="nav__actions">
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to light mode">
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+      </button>
+      <a class="btn btn--small btn--ghost resume-btn" href="../index.html#resume">Resume</a>
+      <button class="icon-btn burger" id="menuOpen" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" role="region" aria-label="Site menu" hidden>
+  <nav aria-label="Mobile">
+    <a href="../index.html#home">Home</a><a href="../index.html#about">About</a><a href="../index.html#projects">AI Work</a><a href="../index.html#research">Research</a>
+    <a href="../index.html#topics">Topics</a><a href="../index.html#skills">Toolkit</a><a href="../index.html#certifications">Certifications</a><a href="../index.html#contact">Contact</a>
+  </nav>
+  <div class="mobile-menu__foot">
+    <a class="btn btn--primary" href="../index.html#projects">Explore AI Work</a>
+    <a class="btn btn--ghost" href="../index.html#resume">View Resume</a>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ============================ HERO ============================ -->
+<section class="cp-hero" aria-labelledby="cpTitle">
+  <div class="wrap">
+    <a class="cp-back mono" href="../index.html#projects"><span aria-hidden="true">←</span> AI Work</a>
+    <div class="cp-hero__grid">
+      <div class="cp-hero__copy">
+        <p class="kicker">AI-Assisted Project · Financial Operations</p>
+        <h1 class="cp-title" id="cpTitle">FinPilot AI</h1>
+        <p class="cp-sub">An AI-assisted financial operations and accounting intelligence platform: twelve finance workflows in one guided interface.</p>
+        <dl class="cp-facts">
+          <div><dt>Type</dt><dd>Web app prototype</dd></div>
+          <div><dt>Stack</dt><dd>React 19, TypeScript, Vite</dd></div>
+          <div><dt>AI</dt><dd>Optional Gemini narrative</dd></div>
+          <div><dt>Data</dt><dd>Local-first, demo data</dd></div>
+        </dl>
+        <div class="cp-actions">
+          <a class="btn btn--ghost" href="#modules">See the 12 modules <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+      <figure class="cp-hero__media">
+        <div class="cp-shot"><img src="../assets/finpilot/bank-reconciliation.jpg" width="1600" height="711" alt="FinPilot AI Bank Reconciliation screen in demo mode: statement closing $219,904.75, reconciled GL cleared $195,829.50, unexplained difference $24,075.25, match rate 25% with 2 of 8 lines cleared, and 5 pending exceptions, with an Auto-Match Engine and a list of bank statement transactions." fetchpriority="high"></div>
+        <figcaption class="mono">Bank Reconciliation · demo data</figcaption>
+      </figure>
+    </div>
+    <dl class="cp-stats" aria-label="Project at a glance">
+      <div><dt>12</dt><dd>finance modules in one app</dd></div>
+      <div><dt>12</dt><dd>build phases, one module area at a time</dd></div>
+      <div><dt>285</dt><dd>in-app test checks (implementation-reported)</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============================ PROBLEM ============================ -->
+<section class="section section--alt cp-sec" id="problem" aria-labelledby="problemTitle">
+  <div class="wrap cp-split">
+    <header class="sec-head">
+      <p class="kicker">The problem</p>
+      <h2 class="sec-title" id="problemTitle">Finance work is spread across disconnected steps</h2>
+    </header>
+    <div class="cp-prose">
+      <p>Finance work often involves many disconnected steps and tools: extracting information from invoices, correcting uncertain fields, maintaining transaction records, tracking outgoing invoices and payments, comparing bank statements with ledger entries, monitoring performance, estimating trends, reading long annual reports and preparing management reports.</p>
+      <p>FinPilot AI brings these activities into <strong>one modular interface</strong>, to show how workflow guidance, calculations, evidence and reporting can be connected.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ MODULES ============================ -->
+<section class="section cp-sec" id="modules" aria-labelledby="modulesTitle">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker">What it does</p>
+      <h2 class="sec-title" id="modulesTitle">Twelve modules, one workspace</h2>
+      <p class="sec-lede">From an incoming vendor invoice to an executive report, with explicit review and approval steps in between.</p>
+    </header>
+    <ol class="cp-steps">
+      <li class="cp-step">
+        <span class="cp-step__n mono">01</span><h3>Overview</h3>
+        <p>A dashboard summarising invoices, ledger activity, reconciliation and cash-flow health.</p>
+      </li>
+      <li class="cp-step">
+        <figure class="cp-step__shot"><img src="../assets/finpilot/invoice-intelligence.jpg" width="1600" height="704" alt="Invoice Intelligence: drag-and-drop upload for PDF, PNG or JPEG invoices, with a client-side privacy notice and tabs for upload, drafts, a 10-test suite and an audit trail." loading="lazy" decoding="async"></figure>
+        <span class="cp-step__n mono">02</span><h3>Invoice Intelligence</h3>
+        <p>Browser-side PDF text extraction with an OCR fallback, field review, validation, duplicate detection and explicit approval.</p>
+      </li>
+      <li class="cp-step">
+        <figure class="cp-step__shot"><img src="../assets/finpilot/expense-ledger.jpg" width="1600" height="710" alt="General Ledger and Expense Management: filtered expenses $217,330.75, credits $153,450.00, net movement −$63,880.75, 12 of 12 rows, with a transaction table of demo records." loading="lazy" decoding="async"></figure>
+        <span class="cp-step__n mono">03</span><h3>Expense Ledger</h3>
+        <p>Transaction management with search, filters, CSV import/export and auditable cancellation instead of silent deletion.</p>
+      </li>
+      <li class="cp-step">
+        <figure class="cp-step__shot"><img src="../assets/finpilot/invoice-generator.jpg" width="1600" height="716" alt="Smart Invoice Generator: total receivables $208,727, outstanding $161,227, settled $47,500, overdue $12,000, and a table of sales invoices by status." loading="lazy" decoding="async"></figure>
+        <span class="cp-step__n mono">04</span><h3>Invoice Generator</h3>
+        <p>Sales invoices with line-item and tax calculations, numbering, print-to-PDF and payment tracking, stored separately from vendor expenses.</p>
+      </li>
+      <li class="cp-step">
+        <figure class="cp-step__shot"><img src="../assets/finpilot/bank-reconciliation.jpg" width="1600" height="711" alt="Bank Reconciliation session with match rate, unexplained difference and pending exceptions." loading="lazy" decoding="async"></figure>
+        <span class="cp-step__n mono">05</span><h3>Bank Reconciliation</h3>
+        <p>CSV statement import, column mapping, direction-aware matching, exceptions, an explicit posting step and session lock/reopen.</p>
+      </li>
+      <li class="cp-step">
+        <span class="cp-step__n mono">06</span><h3>Financial Analytics</h3>
+        <p>Reporting periods, profitability and cash metrics, receivables ageing, customer concentration and financial ratios.</p>
+      </li>
+      <li class="cp-step">
+        <span class="cp-step__n mono">07</span><h3>Revenue Forecast</h3>
+        <p>Deterministic forecasting methods, scenario planning, uncertainty ranges and backtesting (MAE, RMSE, WAPE).</p>
+      </li>
+      <li class="cp-step">
+        <span class="cp-step__n mono">08</span><h3>Annual Report Intelligence</h3>
+        <p>Financial statement extraction with an OCR fallback, unit detection, accounting identity checks and multi-year analysis.</p>
+      </li>
+      <li class="cp-step">
+        <figure class="cp-step__shot"><img src="../assets/finpilot/ai-advisory.jpg" width="1600" height="501" alt="AI Financial Advisory: a decision-support notice, financial posture Watch with review required, 0 high-priority alerts, 2 areas requiring attention and 6 traceable findings." loading="lazy" decoding="async"></figure>
+        <span class="cp-step__n mono">09</span><h3>AI Financial Advisory</h3>
+        <p>Deterministic advisory signals with evidence drill-down and configurable thresholds; optional Gemini narrative on top.</p>
+      </li>
+      <li class="cp-step">
+        <figure class="cp-step__shot"><img src="../assets/finpilot/executive-reports.jpg" width="1600" height="703" alt="Executive Reports: consolidated executive financial indicators for a fictional demo company, including total revenue, operating expenses, net income and bank match rate." loading="lazy" decoding="async"></figure>
+        <span class="cp-step__n mono">10</span><h3>Executive Reports</h3>
+        <p>Seven report templates, period filters, provenance-aware figures, saved snapshots, CSV export and print-to-PDF.</p>
+      </li>
+      <li class="cp-step">
+        <figure class="cp-step__shot"><img src="../assets/finpilot/settings.jpg" width="1600" height="467" alt="Settings, Data Management and Administration, with tabs for company profile, preferences, data management, backup and restore, demo data lifecycle, storage, privacy and diagnostics." loading="lazy" decoding="async"></figure>
+        <span class="cp-step__n mono">11</span><h3>Settings &amp; Data</h3>
+        <p>Versioned JSON backup/restore, storage inventory, demo-data cleanup, diagnostics and reset safeguards.</p>
+      </li>
+      <li class="cp-step">
+        <figure class="cp-step__shot"><img src="../assets/finpilot/help-center.jpg" width="1600" height="707" alt="Help Center and Workflow Guidance with eight guided workflows, a knowledge base, a 26-term financial glossary and a getting-started checklist." loading="lazy" decoding="async"></figure>
+        <span class="cp-step__n mono">12</span><h3>Help Center</h3>
+        <p>First-time onboarding, eight guided workflows, a searchable knowledge base and a 26-term glossary.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================ PRINCIPLES ============================ -->
+<section class="section section--alt cp-sec" id="principles" aria-labelledby="principlesTitle">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker">Design principles</p>
+      <h2 class="sec-title" id="principlesTitle">Code does the maths. AI only explains.</h2>
+    </header>
+    <div class="cp-features">
+      <article class="cp-feature"><h3>Deterministic first</h3><p>Financial arithmetic is computed by code, not invented by a language model.</p></article>
+      <article class="cp-feature"><h3>Human review</h3><p>Extracted invoice and report values can require correction and verification.</p></article>
+      <article class="cp-feature"><h3>Explicit actions</h3><p>Approvals, posting, cancellation and destructive operations are always intentional.</p></article>
+      <article class="cp-feature"><h3>Traceability</h3><p>Every value shows whether it is user-entered, extracted, calculated, forecast, demo or AI-generated.</p></article>
+      <article class="cp-feature"><h3>No silent conversion</h3><p>Changing the preferred currency doesn't convert historical amounts without a valid conversion.</p></article>
+      <article class="cp-feature"><h3>Honest uncertainty</h3><p>Estimates, OCR uncertainty and unavailable ratios are shown, not hidden.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ ARCHITECTURE ============================ -->
+<section class="section cp-sec" id="architecture" aria-labelledby="archTitle">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker">Architecture</p>
+      <h2 class="sec-title" id="archTitle">Local-first, with AI kept at the edge</h2>
+      <p class="sec-lede">Files are processed in the browser and records live in browser storage. The optional AI layer only writes narrative from already-calculated signals.</p>
+    </header>
+    <figure class="cp-arch" aria-label="FinPilot AI data flow: invoices, bank CSVs, manual entries and annual reports are processed in the browser with PDF.js and Tesseract.js; values are reviewed and explicitly approved into the ledger, receivables and reconciliation records in localStorage; deterministic engines calculate ratios, forecasts and advisory signals; an optional Gemini layer writes narrative with a deterministic fallback; everything ends in executive reports, CSV exports and JSON backups.">
+      <div class="cp-arch__row">
+        <div class="cp-node"><span class="mono">Input</span>Invoices, bank CSV, manual entries, annual reports</div>
+        <i class="cp-arrow" aria-hidden="true"></i>
+        <div class="cp-node"><span class="mono">In the browser</span>PDF.js text + Tesseract.js OCR</div>
+        <i class="cp-arrow" aria-hidden="true"></i>
+        <div class="cp-node"><span class="mono">Human step</span>Review &amp; explicit approval</div>
+      </div>
+      <p class="cp-arch__join mono"><i aria-hidden="true">↓</i> approved records (localStorage)</p>
+      <div class="cp-arch__row">
+        <div class="cp-node"><span class="mono">Records</span>Ledger, receivables, reconciliation</div>
+        <i class="cp-arrow" aria-hidden="true"></i>
+        <div class="cp-node cp-node--ai"><span class="mono">Deterministic engines</span>Ratios, forecasts, advisory signals</div>
+        <i class="cp-arrow" aria-hidden="true"></i>
+        <div class="cp-node"><span class="mono">Optional AI</span>Gemini narrative, with a deterministic fallback</div>
+      </div>
+      <p class="cp-arch__join mono"><i aria-hidden="true">↓</i> provenance-labelled outputs</p>
+      <div class="cp-arch__row cp-arch__row--out">
+        <div class="cp-node"><span class="mono">Reporting</span>Executive reports, CSV, print-to-PDF</div>
+        <div class="cp-node"><span class="mono">Data safety</span>Versioned JSON backup &amp; restore</div>
+      </div>
+      <figcaption>Financial arithmetic stays in deterministic code; the AI layer explains results and never acts as the source of truth.</figcaption>
+    </figure>
+
+    <h3 class="mini-head mini-head--spaced">Tech stack (as reported)</h3>
+    <div class="project__tools cp-stack">
+      <span>React 19</span><span>TypeScript</span><span>Vite</span><span>Tailwind CSS v4</span><span>Lucide React</span><span>Motion</span><span>PDF.js</span><span>Tesseract.js</span><span>Browser localStorage</span><span>Google GenAI (optional)</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CHALLENGES ============================ -->
+<section class="section section--alt cp-sec" id="challenges" aria-labelledby="challengesTitle">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker">Challenges</p>
+      <h2 class="sec-title" id="challengesTitle">Keeping twelve workflows consistent</h2>
+      <p class="sec-lede">The hard part was connecting many workflows while keeping financial values, data provenance and explicit user actions consistent.</p>
+    </header>
+    <div class="cp-cs" role="list">
+      <div class="cp-cs__head mono" aria-hidden="true"><span>Challenge</span><span>How it's handled</span></div>
+      <div class="cp-cs__row" role="listitem"><p class="cp-cs__c"><span class="mono">01</span>Sales invoices and vendor expenses could mix</p><p class="cp-cs__s">Outgoing sales invoices are stored and tracked separately from vendor disbursements in the expense ledger.</p></div>
+      <div class="cp-cs__row" role="listitem"><p class="cp-cs__c"><span class="mono">02</span>Importing a bank statement could flood the ledger</p><p class="cp-cs__s">Imported statement rows stay separate from the ledger until an explicit posting action.</p></div>
+      <div class="cp-cs__row" role="listitem"><p class="cp-cs__c"><span class="mono">03</span>Forecasts and AI text could be mistaken for facts</p><p class="cp-cs__s">Historical actuals, forecasts and AI commentary are kept distinct and labelled by source.</p></div>
+      <div class="cp-cs__row" role="listitem"><p class="cp-cs__c"><span class="mono">04</span>A browser app can leak an API key</p><p class="cp-cs__s">Core advisory works without a key through a deterministic fallback; a private key never belongs in a client-visible <code>VITE_</code> variable.</p></div>
+      <div class="cp-cs__row" role="listitem"><p class="cp-cs__c"><span class="mono">05</span>Destructive actions on financial data</p><p class="cp-cs__s">Voided transactions keep an auditable cancellation record; restore and reset use previews and safeguards.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ TESTING ============================ -->
+<section class="section cp-sec" id="testing" aria-labelledby="testTitle">
+  <div class="wrap cp-split">
+    <header class="sec-head">
+      <p class="kicker">Testing</p>
+      <h2 class="sec-title" id="testTitle">A test suite inside every module</h2>
+      <p class="sec-lede">Each module has its own deterministic test runner in the app. The counts below were reported by the build environment during development; they are not an independent QA certification.</p>
+    </header>
+    <div class="cp-tests" role="table" aria-label="Reported test checks by phase">
+      <div role="row" class="cp-tests__head mono"><span role="columnheader">Phase</span><span role="columnheader">Module</span><span role="columnheader">Checks</span></div>
+      <div role="row"><span role="cell" class="mono">2</span><span role="cell">Invoice Intelligence</span><span role="cell">10</span></div>
+      <div role="row"><span role="cell" class="mono">3</span><span role="cell">Expense Ledger</span><span role="cell">16</span></div>
+      <div role="row"><span role="cell" class="mono">4</span><span role="cell">Invoice Generator</span><span role="cell">25</span></div>
+      <div role="row"><span role="cell" class="mono">5</span><span role="cell">Bank Reconciliation</span><span role="cell">28</span></div>
+      <div role="row"><span role="cell" class="mono">6</span><span role="cell">Financial Analytics</span><span role="cell">28</span></div>
+      <div role="row"><span role="cell" class="mono">7</span><span role="cell">Revenue Forecast</span><span role="cell">28</span></div>
+      <div role="row"><span role="cell" class="mono">8</span><span role="cell">Annual Report Intelligence</span><span role="cell">28</span></div>
+      <div role="row"><span role="cell" class="mono">9</span><span role="cell">AI Financial Advisory</span><span role="cell">30</span></div>
+      <div role="row"><span role="cell" class="mono">10</span><span role="cell">Executive Reports</span><span role="cell">32</span></div>
+      <div role="row"><span role="cell" class="mono">11</span><span role="cell">Settings &amp; Data</span><span role="cell">30</span></div>
+      <div role="row"><span role="cell" class="mono">12</span><span role="cell">Help Center</span><span role="cell">30</span></div>
+      <div role="row" class="cp-tests__total"><span role="cell"></span><span role="cell">Total reported</span><span role="cell">285</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ NEXT ============================ -->
+<section class="section section--alt cp-sec" id="next" aria-labelledby="nextTitle">
+  <div class="wrap cp-two">
+    <div>
+      <p class="kicker">What's next</p>
+      <h2 class="sec-title cp-h2-sm" id="nextTitle">Before it could go beyond a demo</h2>
+      <ul class="cp-list">
+        <li>Final hands-on and end-to-end QA, then fix any confirmed accounting or security defects first.</li>
+        <li>Server-side secret management for the AI layer.</li>
+        <li>Durable database persistence, authentication and authorization.</li>
+        <li>Tenant isolation, robust audit logging and formal accounting validation.</li>
+      </ul>
+    </div>
+    <div>
+      <p class="kicker">Known limitations</p>
+      <h2 class="sec-title cp-h2-sm">What it is not (yet)</h2>
+      <ul class="cp-list">
+        <li>Records live in browser localStorage: not encrypted, tied to one browser, no cloud sync.</li>
+        <li>OCR and annual-report extraction can be inaccurate and need review.</li>
+        <li>Forecasts are estimates, not guaranteed outcomes.</li>
+        <li>PDF exports use the browser's print-to-PDF.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ HONESTY NOTES ============================ -->
+<section class="section section--tight cp-sec cp-sec--last" aria-labelledby="honestTitle">
+  <div class="wrap">
+    <aside class="cp-honest glass">
+      <p class="kicker" id="honestTitle">Honesty notes</p>
+      <ul class="cp-list">
+        <li>FinPilot AI is a portfolio prototype. It is not certified accounting or tax software, an audited financial system, bank-connected, or a secure multi-user SaaS platform.</li>
+        <li>Test counts and build results are implementation-reported during development; final hands-on verification is tracked separately.</li>
+        <li>All screenshots use the app's demo mode. The company and people shown are fictional demo data.</li>
+        <li>It is a decision-support demo and does not replace a qualified accountant, auditor, tax professional or investment adviser.</li>
+      </ul>
+    </aside>
+    <div class="cp-end cp-actions">
+      <a class="btn btn--ghost" href="../index.html#projects"><span aria-hidden="true">←</span> Back to AI Work</a>
+    </div>
+  </div>
+</section>
+</main>
+
+
+<!-- ============================ FOOTER (same as the home page) ============================ -->
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <div>
+      <p class="footer__name">Salil Gokhale</p>
+      <p class="footer__roles mono">AI Generalist • AI Researcher • AI Practitioner • AI Explorer</p>
+      <p class="footer__tag">Understanding AI. Questioning AI. Applying it well.</p>
+    </div>
+    <nav aria-label="Footer">
+      <p class="footer__label mono">Sections</p>
+      <ul class="footer__links">
+        <li><a href="../index.html#about">About</a></li><li><a href="../index.html#projects">AI Work</a></li><li><a href="../index.html#research">Research</a></li>
+        <li><a href="../index.html#certifications">Certifications</a></li><li><a href="../index.html#resume">Resume</a></li><li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div>
+      <p class="footer__label mono">Elsewhere</p>
+      <ul class="footer__links">
+        <li><a href="https://www.linkedin.com/in/salil-gokhale-analytics" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/Salil360-cyber" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="mailto:gokhalesalil28@gmail.com">Email</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer__base mono">
+    <span>© <span id="year">2026</span> Salil Gokhale. All rights reserved.</span>
+  </div>
+</footer>
+
+<script src="../js/case-page.js"></script>
+</body>
+</html>
