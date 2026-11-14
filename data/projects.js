@@ -170,6 +170,49 @@ SITE.projects = [
     topics: ["business", "tools", "genai"]
   },
   {
+    slug: "airops-intelligence",
+    name: "AirOps Intelligence — Airline Operations Analytics Dashboard",
+    status: "Live",
+    date: "2026",
+    tagline: "300 sample flights · code calculates, AI explains · 34 automated checks",
+    featuredSummary: "An airline operations dashboard built with Google AI Studio, then audited: code calculates every KPI and Gemini only explains the results.",
+    problem: "Airline delay data sits in separate files, so it is hard to see in one place how punctual the network is, what is causing the delays and which manual tasks are worth automating. AI-built apps also tend to look finished while their numbers are wrong.",
+    solution: "Built an airline operations dashboard with Google AI Studio: CSV upload with data quality checks, on-time performance and delay KPIs, breakdowns by route, airline and delay reason, an AI Copilot that answers only from the calculated numbers, six automation ideas with an ROI estimate, and downloadable reports. Then had the AI-built code audited and corrected before publishing.",
+    ai: ["Google AI Studio (Build mode)", "Gemini API (explains pre-calculated numbers, via a server-side proxy)", "Claude (independent audit of the AI-built code)"],
+    role: "Decided what the dashboard had to answer, directed the AI build, had every KPI rechecked against the data and the errors fixed, then published the code and a live demo",
+    outcome: "Live demo and public code. On 300 synthetic flights: 75.3% on time, 24.7% delayed, and two delay reasons cause about two-thirds of delays. The 6,315 staff hours a year saving is a formula-based estimate, not a measured result.",
+    evidence: [
+      "The audit of the first AI build found real errors: delay-reason percentages added up to 111%, and the delay card and the on-time KPI used different bases. Both were fixed",
+      "All KPIs are calculated by code, so the same file always gives the same result; Gemini only explains them, and the API key stays on the server",
+      "34 automated checks cover the KPI, CSV and ROI logic; the type check and production build pass",
+      "Honest labelling: every screen says the data is synthetic, and if a file has no delay reason the app says so instead of guessing"
+    ],
+    tools: ["Google AI Studio", "Gemini API", "React", "TypeScript", "Node.js / Express", "Claude", "GitHub"],
+    links: { github: "https://github.com/Salil360-cyber/airops-intelligence", demo: "https://airops-intelligence.ai.studio" },
+    thumb: { src: "assets/airops/operations-intelligence.jpg" },
+    screenshots: [
+      {
+        src: "assets/airops/operations-intelligence.jpg",
+        width: 1600, height: 709,
+        alt: "AirOps Intelligence Operations workspace on 300 synthetic flights: on-time performance 75.3%, 72 delayed flights, 9 cancellations, average delay 67.5 minutes, with a flight status chart and delay reasons chart.",
+        caption: "Operations Intelligence · synthetic sample data"
+      },
+      {
+        src: "assets/airops/ai-copilot.jpg",
+        width: 1600, height: 717,
+        alt: "AirOps AI Business Copilot chat screen with a welcome message citing 300 flights and 75.3% on-time performance, suggested questions and an airline filter.",
+        caption: "AI Copilot · explains numbers the app has already calculated"
+      },
+      {
+        src: "assets/airops/reports.jpg",
+        width: 1600, height: 717,
+        alt: "AirOps Documentation and Reports screen showing an operational summary report labelled Portfolio Demo, Synthetic Sample Data.",
+        caption: "Reports · generated from the current data"
+      }
+    ],
+    topics: ["business", "tools", "genai"]
+  },
+  {
     slug: "ai-desk-portfolio",
     name: "The AI Desk — AI Generalist Portfolio",
     status: "Live",
